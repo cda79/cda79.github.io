@@ -1,0 +1,15 @@
+
+.intro-container {
+    color:rgb(28, 11, 66);
+}
+
+#main-headline { 
+    /* only use ID for one, unique thing */
+    color:red;
+}
+
+#svgContainer {
+  width: 400px;
+  height: 400px;
+  background-color: #a0a0a0;
+}
