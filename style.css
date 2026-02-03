@@ -1,15 +1,33 @@
+html, body {
+    background-color: #ffffff;
+  
+    /* Prevent horizontal scrolling */
+    max-width: 100%;
+    overflow-x: hidden; 
+  }
 
-.intro-container {
-    color:rgb(28, 11, 66);
-}
+  p {
+    color: black;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
 
-#index-h1 { 
+ .introduction-main {
+    
+ }
+
+ .intro-container {
+
+ }
+
+ #index-h1 { 
     /* only use ID for one, unique thing */
     color:red;
-}
+ }
 
-#svgContainer {
+ /* #svgContainer {
   width: 400px;
   height: 400px;
   background-color: #a0a0a0;
-}
+ } */
