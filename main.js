@@ -21,7 +21,7 @@
 // let svg = document.querySelector("svg");
 // console.log(svg);
 
-// //element
+// // //element
 // const svgNS = "http://www.w3.org/2000/svg"
 // const circle = document.createElementNS(svgNS, "circle");
 
@@ -39,3 +39,4 @@
         //     <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" />
         //     <circle r="45" cx="150" cy="150" fill="red" stroke="green" stroke-width="3" />
         // </svg>
+        
