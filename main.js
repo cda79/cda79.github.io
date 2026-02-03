@@ -1,42 +1,13 @@
-// alert("HELLO")
-// console.log("HELLO CONSOLE")
+const form = document.getElementById("form");
+const log = document.getElementById("log");
 
-// let introContainer = document.querySelectorAll(".intro-container");
-// console.log(introContainer);
+function logSubmit(event) {
+  log.textContent = `Please allow up to 3 business days for a response.`;
+  event.preventDefault();
+}
 
-// introContainer.forEach((text)=>{
-//     text.style.color = "blue";
-// });
+form.addEventListener("submit", logSubmit);
 
-// introContainer.forEach((text)=>{
-//     text.addEventListener("click",()=>{
-//     alert("HELLO CLICKED");
-//     text.style.color = "blue";
-//     })
-// });
-
-// //container
-// // TODO create a function that takes x y width height and fill 
-// // and generates a rectangle inside of the svg
-// let svg = document.querySelector("svg");
-// console.log(svg);
-
-// // //element
-// const svgNS = "http://www.w3.org/2000/svg"
-// const circle = document.createElementNS(svgNS, "circle");
-
-// circle.setAttributeNS(null,"r",45)
-// circle.setAttributeNS(null,"cx",100);
-// circle.setAttributeNS(null,"cy",100);
-// circle.setAttributeNS(null,"fill","blue");
-// circle.setAttributeNS(null,"stroke","red");
-// circle.setAttributeNS(null,"stroke-width","3");
-// //add element into container
-// svg.appendChild(circle);
-
-// for html:
-        // <svg width="800" height="800">
-        //     <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" />
-        //     <circle r="45" cx="150" cy="150" fill="red" stroke="green" stroke-width="3" />
-        // </svg>
-        
+function submissionAlert() {
+  alert("The form was submitted. Thank you.");
+}

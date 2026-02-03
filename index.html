@@ -8,9 +8,6 @@
     <title>Document</title>
 </head>
     <body>
-        <!-- <svg width="800" height="800">
-        </svg> -->
-        
         <nav class="nav-wrapper">
             <img src="imgs/logo.svg" id="logo" alt="STIN Portfolio logo. Sans-serif text and a rainbow gradient bar." width="250" height="48">
             <nav class="nav-container">
@@ -60,8 +57,8 @@
             <div class="imgs-contact-container">
                 <div class="img-container">
                     <h3>Favourite Movies</h3>
-                    <img src="imgs/movies.png" class="img-thumb"></img>
-                    <img src="imgs/movies2.png" class="img-thumb"></img>
+                    <img src="imgs/movies.png" class="img-thumb" alt="list of movies 1"></img>
+                    <img src="imgs/movies2.png" class="img-thumb" alt="list of movies 2"></img>
                 </div>
             </div>
             <div class="imgs-contact-container">
@@ -69,7 +66,7 @@
                     <h3>Contact</h3>
                     <p>You can contact me at cda79@sfu.ca or by using the form below.</p>
                     <div class="input-wrapper">
-                        <form id="form">
+                        <form id="form" onsubmit="submissionAlert()">
 
                             <label for="email">Email:</label>
                             <input type="text" id="email" placeholder="name@email.ca">
@@ -79,6 +76,7 @@
 
                             <button type="submit">submit</button>
                         </form>
+                        <p id="log"></p>
                     </div>
                 </div>
             </div>

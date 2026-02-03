@@ -178,6 +178,7 @@ label {
 
 .input-wrapper form button:hover, .input-wrapper form button:focus, .input-wrapper form button:active  {
   background-color: #007DBC;
+  font-weight: bold;
 }
 
  @media (max-width: 70rem) {
