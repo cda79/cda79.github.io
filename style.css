@@ -44,15 +44,27 @@ html, body {
 /* -------------------------------------- */
 
  .introduction-main {
-    
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    display: flex;
+    flex-direction: column;
  }
 
  .introduction-main h1 {
     color:red;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
  }
 
  .intro-container {
-
+    width: 70%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: left;
+    box-shadow: 0 0.156rem 0.375rem 0 #b9b9b9;
+    background-color: white;
  }
 
  /* #svgContainer {
