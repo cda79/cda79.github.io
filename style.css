@@ -47,13 +47,12 @@ html, body {
     
  }
 
- .intro-container {
-
+ .introduction-main h1 {
+    color:red;
  }
 
- #index-h1 { 
-    /* only use ID for one, unique thing */
-    color:red;
+ .intro-container {
+
  }
 
  /* #svgContainer {
