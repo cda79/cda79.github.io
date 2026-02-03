@@ -1,4 +1,8 @@
+/* 'Nunito Sans' - IMPORTED FROM GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
 html, body {
+    font-family: 'Nunito Sans', Verdana, sans-serif;
     background-color: #ffffff;
   
     /* Prevent horizontal scrolling */
@@ -12,6 +16,26 @@ html, body {
     font-size: 1.2rem;
     margin-bottom: 1rem;
   }
+
+  .nav-wrapper {
+    height: auto;
+    width: 50%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-container {
+    display:flex;
+    flex-direction: row;
+    gap: 1em;
+    margin: auto;
+  }
+
+
 
  .introduction-main {
     
