@@ -38,6 +38,9 @@ html, body {
 
     display: flex;
     flex-direction: column;
+
+    text-align: center;
+    justify-content: center;
     align-items: center;
     margin-top: 2rem;
   }
@@ -97,12 +100,16 @@ html, body {
  }
 
  @media (max-width: 40rem) {
+  .nav-wrapper {
+    width: 100%;
+  }
  .text-wrapper {
   max-width: 70%;
  }
 
  .skills-experience-wrapper {
   gap: 1rem;
+  flex-direction: column;
  }
 }
 
@@ -188,6 +195,10 @@ label {
  }
 }
 
+/* ------------------------------------------------------ */
+/* ------------------- VISUALIZATIONS ------------------- */
+/* ------------------------------------------------------ */
+
  .visualization-container {
     width: 70%;
     padding: 2rem;
@@ -212,20 +223,33 @@ label {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap:1rem;
+  width: 100%;
  }
 
  #artworkContainer {
   margin-top: 2rem;
  }
 
-  @media (max-width: 50rem) {
+  @media (max-width: 40rem) {
  .visualization-container {
   width: 80%;
+ }
+ #graphContainer {
+  transform: scale(90%);
+  align-self: center;
  }
  .graph-wrapper {
   flex-direction: column;
   align-items: normal;
+ }
+}
+
+  @media (max-width: 30rem) {
+ #graphContainer {
+  transform: scale(70%);
+  align-self: center;
  }
 }
  
