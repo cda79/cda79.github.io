@@ -287,7 +287,78 @@ svg.appendChild(graph14);
 
 //------ y-axis labels -----\\
 const count1 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+const count2 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+const count3 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+const count4 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+const count5 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+
+
 svg.appendChild(count1);
-count1.setAttribute("x", 25);
-count1.setAttribute("y", 50);
+count1.setAttribute("x", 15);
+count1.setAttribute("y", 268);
 count1.textContent = "10";
+
+svg.appendChild(count2);
+count2.setAttribute("x", 15);
+count2.setAttribute("y", 220);
+count2.textContent = "20";
+
+svg.appendChild(count3);
+count3.setAttribute("x", 15);
+count3.setAttribute("y", 170);
+count3.textContent = "30";
+
+svg.appendChild(count4);
+count4.setAttribute("x", 15);
+count4.setAttribute("y", 120);
+count4.textContent = "40";
+
+svg.appendChild(count5);
+count5.setAttribute("x", 15);
+count5.setAttribute("y", 70);
+count5.textContent = "50";
+
+//------ x-axis labels -----\\
+const dim1 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+const dim2 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+const dim3 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+const dim4 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+const dim5 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+const dim6 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+const dim7 = document.createElementNS("http://www.w3.org/2000/svg", "text");
+
+
+svg.appendChild(dim1);
+dim1.setAttribute("x", 32);
+dim1.setAttribute("y", 315);
+dim1.textContent = "Mo";
+
+svg.appendChild(dim2);
+dim2.setAttribute("x", 80);
+dim2.setAttribute("y", 315);
+dim2.textContent = "Tu";
+
+svg.appendChild(dim3);
+dim3.setAttribute("x", 130);
+dim3.setAttribute("y", 315);
+dim3.textContent = "We";
+
+svg.appendChild(dim4);
+dim4.setAttribute("x", 180);
+dim4.setAttribute("y", 315);
+dim4.textContent = "Th";
+
+svg.appendChild(dim5);
+dim5.setAttribute("x", 230);
+dim5.setAttribute("y", 315);
+dim5.textContent = "Fri";
+
+svg.appendChild(dim6);
+dim6.setAttribute("x", 280);
+dim6.setAttribute("y", 315);
+dim6.textContent = "Sa";
+
+svg.appendChild(dim7);
+dim7.setAttribute("x", 325);
+dim7.setAttribute("y", 315);
+dim7.textContent = "Sun";
