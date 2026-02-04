@@ -214,6 +214,10 @@ label {
   gap:1rem;
  }
 
+ #artworkContainer {
+  margin-top: 2rem;
+ }
+
   @media (max-width: 50rem) {
  .visualization-container {
   width: 80%;

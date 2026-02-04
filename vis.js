@@ -17,11 +17,10 @@
 
 
 /* ------------------------------------------------------ */
-/* ---------------- A1 VISUALIZATION SVG ---------------- */
+/* ---------------- A2 VISUALIZATION SVG ---------------- */
 /* ------------------------------------------------------ */
 
 let svg = document.querySelector("svg");
-console.log(svg);
 const svgNS = "http://www.w3.org/2000/svg"
 
 
@@ -362,3 +361,141 @@ svg.appendChild(dim7);
 dim7.setAttribute("x", 325);
 dim7.setAttribute("y", 315);
 dim7.textContent = "Sun";
+
+/* ------------------------------------------------------ */
+/* ----------------- A2 ILLUSTRATION SVG ---------------- */
+/* ------------------------------------------------------ */
+
+let artworkContainer = document.getElementById("artworkContainer");
+
+const rect1 = document.createElementNS(svgNS, "rect");
+const rect2 = document.createElementNS(svgNS, "rect");
+const rect3 = document.createElementNS(svgNS, "rect");
+const rect4 = document.createElementNS(svgNS, "rect");
+const rect5 = document.createElementNS(svgNS, "rect");
+const rect6 = document.createElementNS(svgNS, "rect");
+const rect7 = document.createElementNS(svgNS, "rect");
+const rect8 = document.createElementNS(svgNS, "rect");
+const rect9 = document.createElementNS(svgNS, "rect");
+const rect10 = document.createElementNS(svgNS, "rect");
+const rect11 = document.createElementNS(svgNS, "rect");
+const rect12 = document.createElementNS(svgNS, "rect");
+const rect13 = document.createElementNS(svgNS, "rect");
+const rect14 = document.createElementNS(svgNS, "rect");
+const eye1 = document.createElementNS(svgNS, "rect");
+const eye2 = document.createElementNS(svgNS, "rect");
+
+dogFill1 = "#362e2e";
+dogFill2 = "#C8AB76"
+dogStroke = "#1D1919"
+
+rect13.setAttributeNS(null,"x",105);
+rect13.setAttributeNS(null,"y",202);
+rect13.setAttributeNS(null,"width",151);
+rect13.setAttributeNS(null,"height",98);
+rect13.setAttributeNS(null,"fill",dogFill2);
+artworkContainer.appendChild(rect13);
+
+rect12.setAttributeNS(null,"x",94);
+rect12.setAttributeNS(null,"y",48);
+rect12.setAttributeNS(null,"width",173);
+rect12.setAttributeNS(null,"height",176);
+rect12.setAttributeNS(null,"fill",dogFill1);
+artworkContainer.appendChild(rect12);
+
+rect11.setAttributeNS(null,"x",129);
+rect11.setAttributeNS(null,"y",146);
+rect11.setAttributeNS(null,"width",104);
+rect11.setAttributeNS(null,"height",100);
+rect11.setAttributeNS(null,"fill",dogFill1);
+rect11.setAttributeNS(null,"stroke",dogStroke);
+rect11.setAttributeNS(null,"stroke-width",4);
+artworkContainer.appendChild(rect11);
+
+rect1.setAttributeNS(null,"x",206);
+rect1.setAttributeNS(null,"y",81);
+rect1.setAttributeNS(null,"width",42);
+rect1.setAttributeNS(null,"height",19);
+rect1.setAttributeNS(null,"fill",dogFill2);
+artworkContainer.appendChild(rect1);
+
+rect2.setAttributeNS(null,"x",110);
+rect2.setAttributeNS(null,"y",81);
+rect2.setAttributeNS(null,"width",42);
+rect2.setAttributeNS(null,"height",19);
+rect2.setAttributeNS(null,"fill",dogFill2);
+artworkContainer.appendChild(rect2);
+
+//eyeball2
+rect3.setAttributeNS(null,"x",110);
+rect3.setAttributeNS(null,"y",111);
+rect3.setAttributeNS(null,"width",21);
+rect3.setAttributeNS(null,"height",19);
+rect3.setAttributeNS(null,"fill","black");
+artworkContainer.appendChild(rect3);
+
+eye2.setAttributeNS(null,"x",110);
+eye2.setAttributeNS(null,"y",111);
+eye2.setAttributeNS(null,"width",10);
+eye2.setAttributeNS(null,"height",10);
+eye2.setAttributeNS(null,"fill","white");
+artworkContainer.appendChild(eye2);
+//
+
+//eyeball1
+rect4.setAttributeNS(null,"x",227);
+rect4.setAttributeNS(null,"y",111);
+rect4.setAttributeNS(null,"width",21);
+rect4.setAttributeNS(null,"height",19);
+rect4.setAttributeNS(null,"fill","black");
+artworkContainer.appendChild(rect4);
+
+eye1.setAttributeNS(null,"x",227);
+eye1.setAttributeNS(null,"y",111);
+eye1.setAttributeNS(null,"width",10);
+eye1.setAttributeNS(null,"height",10);
+eye1.setAttributeNS(null,"fill","white");
+artworkContainer.appendChild(eye1);
+//
+
+rect5.setAttributeNS(null,"x",152);
+rect5.setAttributeNS(null,"y",161);
+rect5.setAttributeNS(null,"width",57);
+rect5.setAttributeNS(null,"height",28);
+rect5.setAttributeNS(null,"fill","black");
+artworkContainer.appendChild(rect5);
+
+rect6.setAttributeNS(null,"x",173);
+rect6.setAttributeNS(null,"y",189);
+rect6.setAttributeNS(null,"width",15);
+rect6.setAttributeNS(null,"height",42);
+rect6.setAttributeNS(null,"fill","black");
+artworkContainer.appendChild(rect6);
+
+rect7.setAttributeNS(null,"transform","matrix(-0.890252 0.455469 0.455469 0.890252 100.013 6)");
+rect7.setAttributeNS(null,"width",91);
+rect7.setAttributeNS(null,"height",20);
+rect7.setAttributeNS(null,"fill", dogFill1);
+artworkContainer.appendChild(rect7);
+
+rect8.setAttributeNS(null,"transform","matrix(-0.890252 0.455469 0.455469 0.890252 100.468 6.89025)");
+rect8.setAttributeNS(null,"width",53);
+rect8.setAttributeNS(null,"height",67);
+rect8.setAttributeNS(null,"fill",dogFill1);
+artworkContainer.appendChild(rect8);
+
+rect9.setAttributeNS(null,"x",257.972);
+rect9.setAttributeNS(null,"y",6);
+rect9.setAttributeNS(null,"width",91);
+rect9.setAttributeNS(null,"height",20);
+rect9.setAttributeNS(null,"transform","rotate(27.0951 257.972 6)");
+rect9.setAttributeNS(null,"fill",dogFill1);
+artworkContainer.appendChild(rect9);
+
+rect10.setAttributeNS(null,"x",257.516);
+rect10.setAttributeNS(null,"y",6.89025);
+rect10.setAttributeNS(null,"width",53);
+rect10.setAttributeNS(null,"height",67);
+rect10.setAttributeNS(null,"transform","rotate(27.0951 257.516 6.89025)");
+rect10.setAttributeNS(null,"fill",dogFill1);
+artworkContainer.appendChild(rect10);
