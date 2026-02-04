@@ -19,11 +19,12 @@ html, body {
     margin-bottom: 1rem;
   }
 
-  h3 {
+  h1 {
     align-self: center;
     text-align: center;
     color: #2CA9BC;
     margin: 0;
+    font-size: 1.25rem;
   }
 
 /* -------------------------------------- */
@@ -117,7 +118,7 @@ html, body {
     margin: 2rem auto;
 }
 
-.imgs-contact-wrapper h3 {
+.imgs-contact-wrapper h1 {
   margin-bottom: 1rem;
 }
 
@@ -203,7 +204,7 @@ label {
   font-weight: bold;
  }
 
- .visualization-container h3 {
+ .visualization-container h1 {
   margin-bottom: 1.5rem;
  }
 
