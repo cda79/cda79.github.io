@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  /*----------Navigation Bar----------*/
+
+  .nav-wrapper {
+    display:flex;
+    flex-direction: row;
+    margin:1%;
+    margin-top:1%;
+  }
+
+  /* Media Queries */
+@media (max-width: 60rem) {
+  .nav-wrapper {
+    flex-direction: column;
+  }
+  .nav-bar {
+    margin: 2% 0;
+    flex-wrap: wrap;
+  }
+}
+
+  #logo {
+    position: relative;
+    margin-right:2vh;
+  }
+
+  .nav-bar {
+    display:flex;
+    width:100%;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+  
+  .nav-icon-wrapper {
+    flex:1;
+    display:flex;
+    flex-direction: row-reverse;
+    gap:1vw;
+  }
+
+  .icon-nav {
+    margin-right: auto;
+    margin-left: auto;
+    transition-duration: 0.1s;
+    align-self: flex-end;
+  }
+
+  /* Image Properties */
+  .icon-nav img {
+    width:2.5rem;
+  }
+
+  .icon-nav:hover, .icon-nav:focus, .icon-nav:active {
+    opacity: 50%;
+  }
+  
+/*----------Navigation Elements & Styling----------*/
+  
+  /* Buttons */
+.button-nav {
+    align-self: flex-end;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    flex:1;
+    white-space: nowrap;
+    color: white;
+    font-family: 'Encode Sans Semi Condensed', sans-serif;
+    background-color: #007DBC;
+  
+    text-decoration: none;
+    transition-property: background-color; 
+    transition-duration: 0.5s;
+  }
+  
+  .button-nav:hover, .button-nav:focus, .button-nav:active {
+    background-color: #81C1E0;
+  }
+
+/* Announcement Banner */
+
+.announcement {
+  align-self: flex-end;
+  width: 100%;
+  background-color: #007DBC;
+  opacity: 50%;
+  display: inline-block;
+
+  text-align: center;
+  padding:0.5rem 1rem;
+  color:white;
+  font-weight: bold;
+  text-decoration: underline;
+
+  transition-duration: 0.3s;
+}
+
+.announcement:hover, .announcement:focus, .announcement:active {
+  transition-duration: 0.3s;
+  opacity:100%;
+}
