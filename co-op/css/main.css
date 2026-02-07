@@ -161,6 +161,12 @@ html, body {
   flex-direction: column;
 }
 
+#project-seperator {
+    margin: 2rem auto;
+    align-self: center;
+    justify-content: center;
+}
+
 .projects-main-container {
   display:flex;
   flex-direction: row;
