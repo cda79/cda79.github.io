@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>STIN Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
+
+    <!-- Google Font Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&icon_names=arrow_downward,arrow_upward,chevron_right" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="nav-wrapper">
+            <div class="nav-container"></div>
+
+            <img src="imgs/logo.svg" id="logo" alt="STIN Portfolio logo. Sans-serif text and a rainbow gradient bar." width="250" height="48">
+
+            <div class="nav-container">
+            <nav class="nav-column">
+                <a class="button-nav" href="index.html" title="Home">Home</a>
+                <a class="button-nav" href="contact.html" title="Contact">Contact</a>
+                <a class="button-nav" href="index.html#projects" title="Projects">Projects</a>
+            </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="home-main">
+        <div class="heading-container">
+            <img src="imgs/heading-icon.svg" width="32" height="60" alt="Circle Symbol, Main Header Icon">
+            <h1>Frontend Web Developer</h1>
+        </div>
+
+        <div class="default-container">
+            <p><b>STIN</b> does <b>frontend UI/UX development</b> for the <b>digital web</b> with an emphasis on style & branding.</p>
+            <a href="contact.html">
+                Learn More About Me <span class="material-symbols-outlined">chevron_right</span>
+            </a>
+        </div>
+
+        <div class="home-landing">
+            <img src="imgs/landing-img.svg" width="270" height="148" alt="A desktop computer that represents inclusive design.">
+            <a href="#projects" id="project-redirect">View Projects <span class="material-symbols-outlined">arrow_downward</span></a>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-main">
+
+        <div class="projects-wrapper">
+
+        <div class="heading-container">
+            <img src="imgs/heading-icon.svg" width="32" height="60" alt="Circle Symbol, Main Header Icon">
+            <h1>Projects</h1>
+        </div>
+        
+        <div class="projects-main-container">
+            
+            <div class="default-container">
+                <div class="thumb-title-container">
+                    <img src="imgs/project-icon.svg" width="44" height="44" alt="Looped Square, Gallery Icon">
+                    <div class="heading-container">
+                        <a href="bigpharm.html"><h1>BIG PHARM <span class="material-symbols-outlined">chevron_right</span></h1></a>
+                        <h2>Web Dev & Branding</h2>
+                    </div>
+                </div>
+
+                <div class="thumb-img-container">
+                <a href="bigpharm.html" class="imglink">
+                    <img src="imgs/big-pharm-thumb.png" class="img-thumb" alt="Image redirects to Big Pharm project process page." width="1155" height="738">
+                </a>
+                <div class="text">View Project</div>
+                </div>
+                <p>HTML & CSS, GitHub, Independant</p>
+            </div>
+            
+            <div class="default-container">
+                <div class="thumb-title-container">
+                    <img src="imgs/project-icon.svg" loading="lazy" width="44" height="44" alt="Looped Square, Gallery Icon">
+                    <div class="heading-container">
+                        <a href="#"><h1>VSO: Ratatouille<span class="material-symbols-outlined">chevron_right</span></h1></a>
+                        <h2>Ticket Microsite</h2>
+                    </div>
+                </div>
+
+                <div class="thumb-img-container">
+                <a href="#" class="imglink">
+                    <img src="imgs/ratatouille-thumb.png" loading="lazy" class="img-thumb" alt="Image is clickable but does not redirect." width="1155" height="738">
+                </a>
+                <div class="text">View Project <p>(Display only)</p></div>
+                </div>
+                <p>HTML & CSS, GitHub, Collaborative</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+</body>
+</html>

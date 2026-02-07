@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    margin: 0rem;
+  }
+
+  .nav-wrapper {
+    display:flex;
+    justify-content: space-between;
+    padding: 1rem 0 3rem 0;
+  }
+
+  .nav-container {
+    height:3rem;
+    width:6rem;
+
+    display:flex;
+    flex-direction: column;
+    gap: 0.2em;
+    margin: 0 6%;
+  }
+
+  .button-nav {
+    background-image: linear-gradient(90deg, rgba(167,167,167,1) 0%, rgba(48,48,48,1) 25%, rgba(255,0,0,1) 50%, rgba(234,223,107,1) 75%, rgba(0,178,255,1) 100%);
+    background-size: 400% 100%;
+    background-position: top left;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+
+    transition:all 0.4s ease-out;
+  }
+
+  /* Gradient text hover referenced from stack: https://stackoverflow.com/questions/73330467/how-to-add-transition-animation-to-gradient-text-background-when-hovered */
+  .button-nav:hover, .button-nav:focus, .button-nav:active {
+    background-size: 200% 100%;
+    background-position: top left 100%;
+    text-decoration: none;
+  }
+
+/* Media Queries */
+@media (max-width: 40rem) {
+  .nav-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-container {
+    height:3rem;
+  }
+
+  #logo {
+    margin-bottom: 1rem;
+  }
+}
