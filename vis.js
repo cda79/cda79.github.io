@@ -32,11 +32,32 @@ fetchData().then(async (data) => {
     .width("container")
     .toSpec();
 
+  const vlSpecB = vl
+    .markBar()
+    .data(data)
+    .encode(
+      vl.y().fieldN("Genre").sort("-x"),
+      vl.x().fieldQ("Global_Sales").aggregate("sum"),
+      vl.color().fieldN("Genre").scale({ scheme: "tableau20" }),
+      vl.tooltip([
+        { field: "Genre", type: "nominal" },
+        {
+          field: "Global_Sales",
+          type: "quantitative",
+          aggregate: "sum",
+          title: "Total Global Sales",
+        },
+      ]),
+    )
+    .width("container")
+    .toSpec();
+
   // --------------
 
   const vlSpec2 = vl
     .markBar()
     .data(data)
+    .transform(vl.filter("isValid(datum.Year) && datum.Year !== 'N/A'")) // Filters out null
     .encode(
       vl.facet().fieldN("Genre").columns(2),
       vl.y().fieldQ("Global_Sales").aggregate("sum"),
@@ -58,6 +79,32 @@ fetchData().then(async (data) => {
     )
     .resolve({ axis: { x: "independent" } }) // Forces Year to show on all graphs
     .width("500")
+    .toSpec();
+
+  const vlSpec2B = vl
+    .markArea()
+    .data(data)
+    .transform(
+      vl.filter(
+        "datum.Publisher === 'Nintendo'" &&
+          "datum.Genre === 'Role-Playing' && datum.Year !== 'N/A'",
+      ),
+    )
+    .encode(
+      vl.y().fieldQ("Global_Sales").aggregate("sum"),
+      vl.x().fieldO("Year"),
+      vl.tooltip([
+        { field: "Year", type: "Ordinal" },
+        {
+          field: "Global_Sales",
+          type: "quantitative",
+          aggregate: "sum",
+          title: "Total Global Sales",
+        },
+      ]),
+    )
+    .resolve({ axis: { x: "independent" } }) // Forces Year to show on all graphs
+    .width("container")
     .toSpec();
 
   // ----------------------
@@ -82,16 +129,41 @@ fetchData().then(async (data) => {
     .columns(3)
     .toSpec();
 
+  const vlSpec3B = vl
+    .markBar()
+    .data(data)
+    .transform(
+      vl.filter("indexof(['XB', 'X360', 'XOne'], datum.Platform) >= 0"),
+    )
+    .encode(
+      vl.x().fieldQ(vl.repeat("repeat")).aggregate("sum"),
+      vl.y().fieldN("Platform"),
+      vl.color().fieldN("Platform").legend(null).scale({ scheme: "spectral" }),
+      vl.tooltip([
+        { field: "Platform", type: "nominal" },
+        {
+          field: vl.repeat("repeat"),
+          type: "quantitative",
+          aggregate: "sum",
+          title: "Total Sales",
+        },
+      ]),
+    )
+    .repeat(["JP_Sales", "EU_Sales", "NA_Sales"])
+    .resolve({ scale: { x: "shared" } }) //caluclate the max value across all three data sets
+    .columns(3)
+    .toSpec();
 
-// ---------------
+  // ---------------
   const vlSpec4 = vl
     .markBar()
     .data(data)
-  .encode(
-    vl.y().fieldQ('Global_Sales').aggregate('sum'),
-    vl.x().fieldO('Year'),
-    vl.color().fieldN("Genre").scale({ scheme: "tableau20" }),
-          vl.tooltip([
+    .transform(vl.filter("isValid(datum.Year) && datum.Year !== 'N/A'")) // Filters out null
+    .encode(
+      vl.y().fieldQ("Global_Sales").aggregate("sum"),
+      vl.x().fieldO("Year"),
+      vl.color().fieldN("Genre").scale({ scheme: "tableau20" }),
+      vl.tooltip([
         { field: "Genre", type: "nominal" },
         {
           field: "Global_Sales",
@@ -100,17 +172,42 @@ fetchData().then(async (data) => {
           title: "Total Sales",
         },
       ]),
-  )
-  .width("container")
+    )
+    .width("container")
     .toSpec();
 
-// --------------
+  const vlSpec4B = vl
+    .markLine()
+    .data(data)
+    .transform(vl.filter("datum.Genre === 'Action' && datum.Year !== 'N/A'"))
+    .encode(
+      vl.y().fieldQ("Global_Sales").aggregate("sum"),
+      vl.x().fieldO("Year"),
+      vl.tooltip([
+        { field: "Year", type: "Ordinal" },
+        {
+          field: "Global_Sales",
+          type: "quantitative",
+          aggregate: "sum",
+          title: "Total Global Sales",
+        },
+      ]),
+    )
+    .width("container")
+    .toSpec();
+
+  // --------------
 
   // Render the graphs
   render("#view", vlSpec);
   render("#view2", vlSpec2);
   render("#view3", vlSpec3);
   render("#view4", vlSpec4);
+
+  render("#viewB", vlSpecB);
+  render("#view2B", vlSpec2B);
+  render("#view3B", vlSpec3B);
+  render("#view4B", vlSpec4B);
 });
 
 async function render(viewID, spec) {
