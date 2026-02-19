@@ -178,7 +178,7 @@ fetchData().then(async (data) => {
     .toSpec();
 
   const vlSpec4B = vl
-    .markLine({point:true})
+    .markLine({ point: true })
     .data(data)
     .transform(vl.filter("datum.Genre === 'Action' && datum.Year !== 'N/A'"))
     .encode(
@@ -197,6 +197,61 @@ fetchData().then(async (data) => {
     .width("container")
     .toSpec();
 
+  // ----------
+
+  const vlStat = vl
+    .markTick()
+    .data(data)
+    .title("What were the sales amount of the top 5 games in Japan?")
+    .encode(
+      vl.y().fieldQ("JP_Sales").title("Japanese Sales"),
+      vl.x().fieldO("Year").title("Year"),
+      vl.color().condition(
+        { test: "datum['JP_Sales'] > 6", value: "red" },
+        //filter data with more than 6 million sales & color them red
+      ),
+      vl.tooltip([
+        vl.fieldN("Name"),
+        vl.fieldN("Genre"),
+        vl.fieldQ("JP_Sales"),
+        vl.fieldQ("NA_Sales"),
+      ]),
+    )
+    .width("container")
+    .toSpec();
+  // ------------
+
+  // Caluclate the difference between JP and NA sales and return a new array
+  const videoGamesWithDifference = data.map((d) => {
+    d.NA_JP_difference = d.NA_Sales - d.JP_Sales;
+    return d;
+  });
+
+  const vlStat2 = vl
+    .markTick()
+    .data(videoGamesWithDifference)
+    .title("Difference in Sales for JP vs NA")
+    .encode(
+      vl
+        .x()
+        .fieldQ("NA_JP_difference")
+        .title("Difference between Japanese and NA Sales"),
+      vl.y().fieldN("Genre"),
+      vl.color().condition(
+        { test: "datum['NA_JP_difference'] < 0", value: "red" },
+        // difference is less than 0, show the games that sold MORE in japan
+        // Monster Hunter has sold more in JP than NA, while Wii Sports has sold a lot in NA
+      ),
+      vl.tooltip([
+        vl.fieldN("Name"),
+        vl.fieldN("Genre"),
+        vl.fieldQ("JP_Sales"),
+        vl.fieldQ("NA_Sales"),
+      ]),
+    )
+    .width("container")
+    .toSpec();
+
   // --------------
 
   // Render the graphs
@@ -209,6 +264,9 @@ fetchData().then(async (data) => {
   render("#view2B", vlSpec2B);
   render("#view3B", vlSpec3B);
   render("#view4B", vlSpec4B);
+
+  render("#stats", vlStat);
+  render("#stats2", vlStat2);
 });
 
 async function render(viewID, spec) {
