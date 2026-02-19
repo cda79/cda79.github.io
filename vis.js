@@ -66,7 +66,7 @@ fetchData().then(async (data) => {
         .color()
         .fieldN("Platform")
         .scale({ scheme: "spectral" })
-        .legend({ columns: 3, symbolType: "square" }),
+        .legend({ columns: 5, direction: "horizontal", orient: "top" }),
       vl.tooltip([
         { field: "Platform", type: "nominal" },
         {
@@ -178,7 +178,7 @@ fetchData().then(async (data) => {
     .toSpec();
 
   const vlSpec4B = vl
-    .markLine()
+    .markLine({point:true})
     .data(data)
     .transform(vl.filter("datum.Genre === 'Action' && datum.Year !== 'N/A'"))
     .encode(
