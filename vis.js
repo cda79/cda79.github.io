@@ -10,24 +10,39 @@ fetchData().then(async (data) => {
     .markBar()
     .data(data)
     .encode(
-      vl.y().fieldN("Platform").sort("-x"),
-      vl.x().fieldQ("Global_Sales").aggregate("sum")
+      vl.y().fieldN("Genre").sort("-x"),
+      vl.x().fieldN("Platform"),
+      vl.color().fieldQ("Global_Sales").aggregate("sum").title("Sum of Global Sales").scale({ scheme: "greenblue" }),
+      
+      vl.tooltip([
+      { field: "Genre", type: "nominal" },
+      { 
+        field: "Global_Sales", 
+        type: "quantitative", 
+        aggregate: "sum", 
+        title: "Total Global Sales",
+      }
+    ]),
     )
     .width("container")
-    .height(400)
     .toSpec();
+
+    // --------------
 
   const vlSpec2 = vl
     .markBar()
     .data(data)
-    .encode(
-      vl.y().fieldN("Genre").sort("-x"),
-      vl.x().fieldQ("Global_Sales").aggregate("sum"),
-      vl.color().value("teal")
-    )
+.encode (
+  vl.facet().fieldN("Genre").columns(2),
+  vl.y().fieldQ('Global_Sales').aggregate('sum'),
+  vl.x().fieldO('Year'),
+  vl.color().fieldN("Platform").scale({ scheme: "tableau20" }),
+)
     .width("container")
-    .height(400)
     .toSpec();
+
+    
+    // ----------------------
 
   // JSON Specification
   const vlSpec3 = {
