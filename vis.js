@@ -126,6 +126,7 @@ fetchData().then(async (data) => {
       ]),
     )
     .repeat(["JP_Sales", "EU_Sales", "NA_Sales"])
+    .resolve({ scale: { x: "shared" } }) //caluclate the max value across all three data sets
     .columns(3)
     .toSpec();
 
