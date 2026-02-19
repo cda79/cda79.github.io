@@ -1,116 +1,119 @@
 /* 'Nunito Sans' - IMPORTED FROM GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
-html, body {
-    font-family: 'Nunito Sans', Verdana, sans-serif;
-    background-color: #ffffff;
-  
-    /* Prevent horizontal scrolling */
-    max-width: 100%;
-    overflow-x: hidden; 
-    overflow: visible;
-    height: 100%;
-  }
+html,
+body {
+  font-family: "Nunito Sans", Verdana, sans-serif;
+  background-color: #ffffff;
 
-  p {
-    color: black;
-    font-weight: 300;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
+  /* Prevent horizontal scrolling */
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow: visible;
+  height: 100%;
+}
 
-  h1 {
-    align-self: center;
-    text-align: center;
-    color: #2CA9BC;
-    margin: 0;
-    font-size: 1.25rem;
-  }
+p {
+  color: black;
+  font-weight: 300;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  align-self: center;
+  text-align: center;
+  color: #2ca9bc;
+  margin: 0;
+  font-size: 1.25rem;
+}
 
 /* -------------------------------------- */
 /* ----------- NAVIGATION BAR ----------- */
 /* -------------------------------------- */
 
-  .nav-wrapper {
-    height: auto;
-    width: 50%;
-    margin: auto;
+.nav-wrapper {
+  height: auto;
+  width: 50%;
+  margin: auto;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-  }
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
 
-  .button-nav {
-    text-decoration: none;
-    margin: 1rem 0.5rem;
-    font-size: 1.25rem;
+.button-nav {
+  text-decoration: none;
+  margin: 1rem 0.5rem;
+  font-size: 1.25rem;
 
-    color:gray;
-    transition:all 0.4s ease-out;
-  }
+  color: gray;
+  transition: all 0.4s ease-out;
+}
 
-  .button-nav:hover, .button-nav:focus, .button-nav:active {
-    color: #2CA9BC;
-    font-weight: bold;
-  }
+.button-nav:hover,
+.button-nav:focus,
+.button-nav:active {
+  color: #2ca9bc;
+  font-weight: bold;
+}
 
-  .nav-container {
-    display:flex;
-    flex-direction: row;
-    gap: 1rem;
-    margin: auto;
-  }
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: auto;
+}
 
 /* -------------------------------------- */
 /* -------------- HOMEPAGE -------------- */
 /* -------------------------------------- */
 
- .info-wrapper {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+.info-wrapper {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
- }
-  
- .info-container {
-    width: 70%;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0.156rem 0.375rem 0 #b9b9b9;
-    background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
+.info-container {
+  width: 70%;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.156rem 0.375rem 0 #b9b9b9;
+  background-color: white;
 
- .skills-experience-wrapper {
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   gap: 5rem;
- }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
- @media (max-width: 40rem) {
+.skills-experience-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5rem;
+}
+
+@media (max-width: 40rem) {
   .nav-wrapper {
     width: 100%;
   }
- .text-wrapper {
-  max-width: 70%;
- }
+  .text-wrapper {
+    max-width: 70%;
+  }
 
- .skills-experience-wrapper {
-  gap: 1rem;
-  flex-direction: column;
- }
+  .skills-experience-wrapper {
+    gap: 1rem;
+    flex-direction: column;
+  }
 }
 
 /* ------------------------------------------------------ */
@@ -118,11 +121,11 @@ html, body {
 /* ------------------------------------------------------ */
 
 .imgs-contact-wrapper {
-    width: 70%;
-    display: flex;
-    gap:1rem;
-    width: 70%;
-    margin: 2rem auto;
+  width: 70%;
+  display: flex;
+  gap: 1rem;
+  width: 70%;
+  margin: 2rem auto;
 }
 
 .imgs-contact-wrapper h1 {
@@ -130,39 +133,39 @@ html, body {
 }
 
 .img-container {
-  width:100%;
+  width: 100%;
   height: auto;
 }
- 
+
 .img-thumb {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 0.5rem;
   margin: 0 auto;
 }
 
 .imgs-contact-container {
-    flex: 1;
-    box-shadow: 0 0.156rem 0.375rem 0 #b9b9b9;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
+  flex: 1;
+  box-shadow: 0 0.156rem 0.375rem 0 #b9b9b9;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
 }
 
 .input-wrapper {
   margin: auto;
 }
 
-input[type=text] {
-  background-color: #E5EEF3;
-  border: 0.125rem solid #7F96A1;
-  padding:0.5rem;
-  width:90%;
+input[type="text"] {
+  background-color: #e5eef3;
+  border: 0.125rem solid #7f96a1;
+  padding: 0.5rem;
+  width: 90%;
   border-radius: 0.25rem;
   display: block;
-} 
+}
 
 label {
   font-weight: 700;
@@ -171,105 +174,110 @@ label {
 }
 
 .input-wrapper form button {
-  font-family: 'Nunito Sans', Verdana, sans-serif;
+  font-family: "Nunito Sans", Verdana, sans-serif;
   font-size: 1rem;
 
   color: white;
-  background-color: #81C1E0;
-  padding:0.5rem;
+  background-color: #81c1e0;
+  padding: 0.5rem;
   border: none;
   border-radius: 0.25rem;
   margin-top: 1rem;
-  transition-property: background-color; 
+  transition-property: background-color;
   transition-duration: 0.15s;
 }
 
-.input-wrapper form button:hover, .input-wrapper form button:focus, .input-wrapper form button:active  {
-  background-color: #007DBC;
+.input-wrapper form button:hover,
+.input-wrapper form button:focus,
+.input-wrapper form button:active {
+  background-color: #007dbc;
   font-weight: bold;
 }
 
- @media (max-width: 70rem) {
- .imgs-contact-wrapper {
-  flex-direction: column;
- }
+@media (max-width: 70rem) {
+  .imgs-contact-wrapper {
+    flex-direction: column;
+  }
 }
 
 /* ------------------------------------------------------ */
 /* ------------------- VISUALIZATIONS ------------------- */
 /* ------------------------------------------------------ */
 
- .visualization-container {
-    width: 70%;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0.156rem 0.375rem 0 #b9b9b9;
-    background-color: white;
+.visualization-container {
+  width: 70%;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.156rem 0.375rem 0 #b9b9b9;
+  background-color: white;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
- .visualization-container p {
+.visualization-container p {
   font-weight: bold;
- }
+}
 
- .visualization-container h1 {
+.visualization-container h1 {
   margin-bottom: 1.5rem;
- }
+}
 
- .graph-wrapper {
+.graph-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap:1rem;
+  gap: 1rem;
   width: 100%;
- }
-
- #artworkContainer {
-  margin-top: 2rem;
- }
-
-  @media (max-width: 40rem) {
- .visualization-container {
-  width: 80%;
- }
- #graphContainer {
-  transform: scale(90%);
-  align-self: center;
- }
- .graph-wrapper {
-  flex-direction: column;
-  align-items: normal;
- }
 }
 
-  @media (max-width: 30rem) {
- #graphContainer {
-  transform: scale(70%);
-  align-self: center;
- }
+#artworkContainer {
+  margin-top: 2rem;
+}
+
+@media (max-width: 40rem) {
+  .visualization-container {
+    width: 80%;
+  }
+  #graphContainer {
+    transform: scale(90%);
+    align-self: center;
+  }
+  .graph-wrapper {
+    flex-direction: column;
+    align-items: normal;
+  }
+}
+
+@media (max-width: 30rem) {
+  #graphContainer {
+    transform: scale(70%);
+    align-self: center;
+  }
 }
 
 /* -------------------------------------- */
 /* ------- VEGALITE VISUALIZATIONS ------ */
 /* -------------------------------------- */
- 
+
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
 #view,
-#view2,
 #view3,
 #view4 {
   width: 100%;
   height: 100%;
   max-width: 800px;
+}
+
+#view2 {
+  width: auto;
 }
