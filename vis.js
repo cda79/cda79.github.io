@@ -1,19 +1,108 @@
-// alert("HELLO")
-// console.log("HELLO CONSOLE")
+// Load data from datasets/videogames_wide.csv using d3.csv and then make visualizations
+async function fetchData() {
+  const data = await d3.csv("./dataset/videogames_wide.csv");
+  return data;
+}
 
-// let introContainer = document.querySelectorAll(".intro-container");
-// console.log(introContainer);
+fetchData().then(async (data) => {
+  // Pure Javascript
+  const vlSpec = vl
+    .markBar()
+    .data(data)
+    .encode(
+      vl.y().fieldN("Platform").sort("-x"),
+      vl.x().fieldQ("Global_Sales").aggregate("sum")
+    )
+    .width("container")
+    .height(400)
+    .toSpec();
 
-// introContainer.forEach((text)=>{
-//     text.style.color = "blue";
-// });
+  const vlSpec2 = vl
+    .markBar()
+    .data(data)
+    .encode(
+      vl.y().fieldN("Genre").sort("-x"),
+      vl.x().fieldQ("Global_Sales").aggregate("sum"),
+      vl.color().value("teal")
+    )
+    .width("container")
+    .height(400)
+    .toSpec();
 
-// introContainer.forEach((text)=>{
-//     text.addEventListener("click",()=>{
-//     alert("HELLO CLICKED");
-//     text.style.color = "blue";
-//     })
-// });
+  // JSON Specification
+  const vlSpec3 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "description": "A scatterplot showing horsepower and miles per gallons that opens a Google search for the car that you click on.",
+  "data": {"url": "dataset/cars.json"},
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Horsepower", 
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Miles_per_Gallon",
+      "title": "Miles Per Gallon", 
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Origin", 
+      "type": "nominal"
+    },
+    "tooltip": [
+    {"field": "Name", "type": "nominal"},
+    {"field": "Origin", "type": "nominal"},
+    {"field": "Year", "type": "temporal"},
+  ]
+  }
+}
+
+// Hybrid Approach
+  const encodingSpec4 = {
+  "encoding": {
+    "x": {
+      "field": "Horsepower", 
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Miles_per_Gallon",
+      "title": "Miles Per Gallon", 
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Origin", 
+      "type": "nominal"
+    },
+    "tooltip": [
+    {"field": "Name", "type": "nominal"},
+    {"field": "Origin", "type": "nominal"},
+    {"field": "Year", "type": "temporal"},]
+  }
+  };
+
+  const vlSpec4 = vl
+    .markPoint({filled:true, opacity: 0.6, tooltip:true})
+    .data("dataset/cars.json")
+    .encode(encodingSpec4.encoding)
+    .width("container")
+    .toSpec();
+
+
+// Render the graphs
+  render("#view", vlSpec);
+  render("#view2", vlSpec2);
+  render("#view3", vlSpec3);
+  render("#view4", vlSpec4);
+});
+
+async function render(viewID, spec) {
+  const result = await vegaEmbed(viewID, spec);
+  result.view.run();
+}
+
+
+
 
 
 /* ------------------------------------------------------ */
