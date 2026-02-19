@@ -45,12 +45,78 @@
       />
       <nav class="nav-container">
         <a class="button-nav" href="index.html" title="Home">Home</a>
-        <a class="button-nav" href="visualizations.html" title="visualizations">Visualizations</a>
-        <a class="button-nav" href="vegalite.html" title="vega-lite">Vega-Lite</a>
+        <a class="button-nav" href="visualizations.html" title="visualizations"
+          >Visualizations</a
+        >
+        <a class="button-nav" href="vegalite.html" title="vega-lite"
+          >Vega-Lite</a
+        >
       </nav>
     </nav>
 
     <div class="container">
+      <h1>1. Describe the Data</h1>
+      <div class="data-wrapper">
+        <table>
+          <tr>
+            <th>Variable</th>
+            <th>Data Type</th>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>Nominal</td>
+          </tr>
+          <tr>
+            <td>Platform</td>
+            <td>Nominal</td>
+          </tr>
+          <tr>
+            <td>Year</td>
+            <td>Temporal</td>
+          </tr>
+          <tr>
+            <td>Genre</td>
+            <td>Nominal</td>
+          </tr>
+          <tr>
+            <td>Publisher</td>
+            <td>Nominal</td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <th>Variable</th>
+            <th>Data Type</th>
+          </tr>
+          <tr>
+            <td>Publisher</td>
+            <td>Nominal</td>
+          </tr>
+          <tr>
+            <td>NA_Sales</td>
+            <td>Quantitative</td>
+          </tr>
+          <tr>
+            <td>EU_Sales</td>
+            <td>Quantitative</td>
+          </tr>
+          <tr>
+            <td>JP_Sales</td>
+            <td>Quantitative</td>
+          </tr>
+          <tr>
+            <td>Other_Sales</td>
+            <td>Quantitative</td>
+          </tr>
+          <tr>
+            <td>Global_Sales</td>
+            <td>Quantitative</td>
+          </tr>
+        </table>
+      </div>
+
+      <h1>2. Visual Explorations</h1>
       <!-- visualization goes into this div you can create multiple divs and give them IDs -->
       <h2>Visualization 1: Global Sales by Genre and Platform</h2>
       <div id="view"></div>
@@ -58,6 +124,7 @@
       <div id="view2"></div>
       <h2>Visualization 3: Regional Sales vs. Platform</h2>
       <div id="view3"></div>
+      <h2>Visualization 4: Sales Over Time by Genre Popularity</h2>
       <div id="view4"></div>
     </div>
     <script type="module" src="vis.js"></script>

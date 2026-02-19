@@ -270,6 +270,22 @@ label {
   width: 100%;
 }
 
+.container h1 {
+  align-self: center;
+  text-align: center;
+  color: #000000;
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+.container h2 {
+  align-self: center;
+  text-align: center;
+  color: #5e5e5e;
+  margin: 1rem;
+  font-size: 1.25rem;
+}
+
 #view,
 #view3,
 #view4 {
@@ -280,4 +296,19 @@ label {
 
 #view2 {
   width: auto;
+}
+
+.data-wrapper {
+  flex-direction: row;
+  display: flex;
+  gap:1rem;
+}
+
+.data-wrapper table, .data-wrapper th, .data-wrapper td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.data-wrapper th, .data-wrapper td {
+  padding: 20px;
 }

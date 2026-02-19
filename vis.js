@@ -82,19 +82,29 @@ fetchData().then(async (data) => {
     .columns(3)
     .toSpec();
 
-  // --------------
-  // vl.markBar()
-  //   .data(videoGamesData)
-  //   .encode(
-  //     vl.x().fieldQ(vl.repeat("repeat")).aggregate("sum"),
-  //     vl.y().fieldN("Platform"),
-  //     vl.color().fieldN("Platform"),
-  //   )
-  //   .repeat(["JP_Sales", "EU_Sales", "NA_Sales"])
-  //   .columns(2)
-  //   .render();
 
-  // -----------
+// ---------------
+  const vlSpec4 = vl
+    .markBar()
+    .data(data)
+  .encode(
+    vl.y().fieldQ('Global_Sales').aggregate('sum'),
+    vl.x().fieldO('Year'),
+    vl.color().fieldN("Genre").scale({ scheme: "tableau20" }),
+          vl.tooltip([
+        { field: "Genre", type: "nominal" },
+        {
+          field: "Global_Sales",
+          type: "quantitative",
+          aggregate: "sum",
+          title: "Total Sales",
+        },
+      ]),
+  )
+  .width("container")
+    .toSpec();
+
+// --------------
 
   // Render the graphs
   render("#view", vlSpec);
