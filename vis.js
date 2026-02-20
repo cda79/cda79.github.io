@@ -200,25 +200,90 @@ fetchData().then(async (data) => {
   // ----------
 
   const vlStat = vl
-    .markTick()
-    .data(data)
-    .title("What were the sales amount of the top 5 games in Japan?")
-    .encode(
-      vl.y().fieldQ("JP_Sales").title("Japanese Sales"),
-      vl.x().fieldO("Year").title("Year"),
-      vl.color().condition(
-        { test: "datum['JP_Sales'] > 6", value: "red" },
-        //filter data with more than 6 million sales & color them red
-      ),
-      vl.tooltip([
-        vl.fieldN("Name"),
-        vl.fieldN("Genre"),
-        vl.fieldQ("JP_Sales"),
-        vl.fieldQ("NA_Sales"),
-      ]),
+    .layer(
+      vl
+        .markErrorbar({ extent: "stdev" })
+        .data(data)
+        .transform(vl.filter("isValid(datum.Year) && datum.Year !== 'N/A'"))
+        .encode(vl.y().fieldO("Year"), vl.x().fieldQ(vl.repeat("repeat"))),
+      vl
+        .markPoint({ filled: true })
+        .data(data)
+        .transform(vl.filter("isValid(datum.Year) && datum.Year !== 'N/A'"))
+        .encode(
+          vl.y().fieldO("Year"),
+          vl.x().fieldQ(vl.repeat("repeat")).aggregate("mean"),
+          vl.tooltip([
+            {
+              field: vl.repeat("repeat"),
+              title: "Median of Sales",
+              aggregate: "median",
+            },
+            {
+              field: vl.repeat("repeat"),
+              title: "Mean of Sales",
+              aggregate: "mean",
+            },
+            { field: "Year", type: "Ordinal" },
+          ]),
+        ),
+      vl
+        .markLine({ interpolate: "natural", opacity: 0.5 })
+        .data(data)
+        .transform(vl.filter("isValid(datum.Year) && datum.Year !== 'N/A'"))
+        .encode(
+          vl.y().fieldO("Year"),
+          vl.x().fieldQ(vl.repeat("repeat")).aggregate("mean"),
+          vl.color({ value: "teal" }),
+        ),
     )
-    .width("container")
+    .repeat(["Global_Sales", "JP_Sales", "EU_Sales", "NA_Sales"])
+    .columns(2)
     .toSpec();
+
+  const vlStatB = vl
+    .layer(
+      vl
+        .markErrorbar({ extent: "stdev", opacity: 1 })
+        .data(data)
+        .transform(vl.filter("isValid(datum.Year) && datum.Year !== 'N/A'"))
+        .encode(vl.y().fieldO("Year"), vl.x().fieldQ(vl.repeat("repeat"))),
+      vl
+        .markPoint({ filled: true })
+        .data(data)
+        .transform(vl.filter("isValid(datum.Year) && datum.Year !== 'N/A'"))
+        .encode(
+          vl.y().fieldO("Year"),
+          vl.x().fieldQ(vl.repeat("repeat")).aggregate("mean"),
+          vl.tooltip([
+            {
+              field: vl.repeat("repeat"),
+              title: "Median of Sales",
+              aggregate: "median",
+            },
+            {
+              field: vl.repeat("repeat"),
+              title: "Mean of Sales",
+              aggregate: "mean",
+            },
+            { field: "Year", type: "Ordinal" },
+          ]),
+        ),
+      vl
+        .markLine({ interpolate: "natural", opacity: 0.5 })
+        .data(data)
+        .transform(vl.filter("isValid(datum.Year) && datum.Year !== 'N/A'"))
+        .encode(
+          vl.y().fieldO("Year"),
+          vl.x().fieldQ(vl.repeat("repeat")).aggregate("mean"),
+          vl.color({ value: "red" }),
+        ),
+    )
+    .repeat(["Global_Sales", "JP_Sales", "EU_Sales", "NA_Sales"])
+    .columns(2)
+    .resolve({ scale: { x: "shared" } })
+    .toSpec();
+
   // ------------
 
   // Caluclate the difference between JP and NA sales and return a new array
@@ -230,7 +295,6 @@ fetchData().then(async (data) => {
   const vlStat2 = vl
     .markTick()
     .data(videoGamesWithDifference)
-    .title("Difference in Sales for JP vs NA")
     .encode(
       vl
         .x()
@@ -266,6 +330,7 @@ fetchData().then(async (data) => {
   render("#view4B", vlSpec4B);
 
   render("#stats", vlStat);
+  render("#statsB", vlStatB);
   render("#stats2", vlStat2);
 });
 

@@ -313,16 +313,35 @@ label {
   max-width: 800px;
 }
 
+#stats,
+#statsB,
 #view2 {
   width: auto;
 }
 
-#stats,
 #stats2 {
   width: 100%;
   height: 100%;
   max-width: 800px;
   margin-top: 1rem;
+}
+
+.stats-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.15rem solid lightgray;
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 .data-wrapper {
@@ -341,4 +360,10 @@ label {
 .data-wrapper th,
 .data-wrapper td {
   padding: 20px;
+}
+
+@media (max-width: 42rem) {
+  .stats-wrapper {
+    flex-direction: column;
+  }
 }
