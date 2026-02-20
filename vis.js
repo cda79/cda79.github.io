@@ -113,7 +113,7 @@ fetchData().then(async (data) => {
     .data(data)
     .encode(
       vl.x().fieldQ(vl.repeat("repeat")).aggregate("sum"),
-      vl.y().fieldN("Platform"),
+      vl.y().fieldN("Platform").sort("-x"),
       vl.color().fieldN("Platform").legend(null).scale({ scheme: "spectral" }),
       vl.tooltip([
         { field: "Platform", type: "nominal" },
