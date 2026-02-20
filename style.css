@@ -258,9 +258,9 @@ label {
   }
 }
 
-/* -------------------------------------- */
-/* ------- VEGALITE VISUALIZATIONS ------ */
-/* -------------------------------------- */
+/* ----------------------------------------- */
+/* ------- A3 VEGALITE VISUALIZATIONS ------ */
+/* ----------------------------------------- */
 
 .container {
   display: flex;
@@ -313,16 +313,16 @@ label {
   max-width: 800px;
 }
 
+#view2 {
+  width: auto;
+}
+
 #stats,
 #stats2 {
   width: 100%;
   height: 100%;
   max-width: 800px;
   margin-top: 1rem;
-}
-
-#view2 {
-  width: auto;
 }
 
 .data-wrapper {
