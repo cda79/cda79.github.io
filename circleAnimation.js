@@ -8,10 +8,6 @@ const height = 600;
 const duration = 800;
 const clickFrameCount = 5;
 
-let randomX = Math.random() * width;
-let randomY = Math.random() * height;
-let randomR = Math.random() * 25 + 5;
-
 async function prepareVis() {
   svg = d3
     .select("#visContainer")
@@ -66,7 +62,7 @@ async function playAnimation(event) {
   let index = 0;
 
   const interval = setInterval(() => {
-    // Generate NEW random values inside the interval for movement/scaling
+    // Generate inside the interval for random movement/scaling
     const newX = Math.random() * width;
     const newY = Math.random() * height;
     const newR = Math.random() * 50 + 5;
