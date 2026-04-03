@@ -204,6 +204,12 @@ label {
 /* ------------------- VISUALIZATIONS ------------------- */
 /* ------------------------------------------------------ */
 
+/* Hide vegalite menu */
+div[style*="position: absolute"] > .vega-actions,
+.vega-embed details {
+  display: none !important;
+}
+
 .visualization-container {
   width: 70%;
   padding: 2rem;

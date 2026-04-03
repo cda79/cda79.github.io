@@ -334,6 +334,10 @@ fetchData().then(async (data) => {
   render("#stats2", vlStat2);
 });
 
+vegaEmbed("#view", vlSpec, {
+  actions: false, // This hides the export/observable menu entirely
+});
+
 async function render(viewID, spec) {
   const result = await vegaEmbed(viewID, spec);
   result.view.run();
