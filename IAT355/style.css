@@ -1,0 +1,21 @@
+/* Fonts */
+/* "IM Fell Double Pica", "Hammersmith One" */
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=IM+Fell+Double+Pica:ital@0;1&display=swap");
+
+:root {
+  --primary-bg: #222116;
+}
+
+html,
+body {
+  font-family: "IM Fell Double Pica", serif, sans-serif;
+  color: white;
+  font-size: 5vh;
+
+  /* Prevent horizontal scrolling */
+  background-color: var(--primary-bg);
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow: visible;
+  height: 100%;
+}
