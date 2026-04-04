@@ -2,8 +2,17 @@
 /* "IM Fell Double Pica", "Hammersmith One" */
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=IM+Fell+Double+Pica:ital@0;1&display=swap");
 
+/* Hide vegalite menu */
+div[style*="position: absolute"] > .vega-actions,
+.vega-embed details {
+  display: none !important;
+}
+
 :root {
-  --primary-bg: #222116;
+  --primary-gray: #222116;
+  --primary-red: #b8231e;
+  --primary-yellow: #fdca8b;
+  --gray1: #c2baa6;
 }
 
 html,
@@ -12,10 +21,15 @@ body {
   color: white;
   font-size: 5vh;
 
-  /* Prevent horizontal scrolling */
-  background-color: var(--primary-bg);
-  max-width: 100%;
-  overflow-x: hidden;
-  overflow: visible;
+  background-color: var(--primary-gray);
+  width: 100%;
   height: 100%;
+  margin: 0;
+
+  /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+}
+
+#Intro {
+  background-color: var(--primary-red);
 }
