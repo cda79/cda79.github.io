@@ -19,7 +19,7 @@ html,
 body {
   font-family: "IM Fell Double Pica", serif, sans-serif;
   color: white;
-  font-size: 3vh;
+  font-size: 2vw;
 
   background-color: var(--primary-gray);
   width: 100%;
@@ -30,6 +30,87 @@ body {
   overflow-x: hidden;
 }
 
-#Intro {
+/* ----------------Hook----------------- */
+#hook {
+  width: 100%;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.hook-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hook-element-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.video-wrapper {
+  width: 50%;
+}
+
+#videoInsert {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.quote-container {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+}
+
+.quote-container p {
+  margin: 0;
+  padding: 0;
+}
+
+#quoter {
+  margin-top: 4vh;
+}
+
+/* ----------------Intro----------------- */
+#intro {
   background-color: var(--primary-red);
+  width: 100%;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#intro .quote-container {
+  text-align: center;
+  margin-top: 5vh;
+}
+
+/* ----------------P1----------------- */
+
+#P1 {
+  width: 100%;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-text {
+  font-family: "Hammersmith One", Verdana, sans-serif;
+}
+
+.information-text {
+  width: 90%;
 }

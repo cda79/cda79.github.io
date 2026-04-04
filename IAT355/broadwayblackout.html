@@ -8,27 +8,51 @@
     <script src="main.js" type="text/javascript" defer></script>
   </head>
   <body>
-    <section id="Hook">
+    <section id="hook">
       <div class="hook-container">
-        <div class="hook-element-container">
-          <video height="480" width="854" autoplay muted playsinline>
-            <source src="src/clip.mp4" type="video/mp4" />
-            Clip of Timothee Chalamet on CNN's Variety.
-          </video>
-
-          <p>
-            “I don't want to be working in ballet or opera, or you know, things
-            where it's like 'hey keep this thing alive' even though it's like,
-            no one cares about this anymore.” - Timothee Chalamat
-          </p>
+        <div class="hook-element-wrapper">
+          <div class="video-wrapper">
+            <video
+              id="videoInsert"
+              height="480"
+              width="854"
+              autoplay
+              muted
+              playsinline
+            >
+              <source src="src/clip.mp4" type="video/mp4" />
+              Clip of Timothee Chalamet on CNN's Variety.
+            </video>
+          </div>
+          <div class="quote-container">
+            <p>
+              “ I don't want to be working in ballet or opera, or you know,
+              things where it's like &#x2018;hey keep this thing alive&#x2019;
+              even though it's like, no one cares about this anymore.”
+            </p>
+            <p id="quoter">- Timothee Chalamet</p>
+          </div>
         </div>
       </div>
     </section>
-    <section id="Intro">
+    <section id="intro">
       <img src="src/logo-svg.svg" class="intro-logo" alt="BROADWAY BLACKOUT" />
-      <p>
-        What defines Broadway's longevity and success, and how have certain
-        production types contributed to it across the decades?
+      <div class="quote-container">
+        <p>
+          What defines Broadway's longevity and success, and how have certain
+          production types contributed to it across the decades?
+        </p>
+      </div>
+    </section>
+    <section id="P1">
+      <p class="question-text">
+        How has the popularity of Broadway shows shifted across decades from
+        1900-2020?
+      </p>
+      <p class="information-text">
+        Broadway saw a surge in the volume of titles opened in the 1900s and
+        achieved its all time peak during the 1920s, before meeting a sharp
+        decline in the subsequent decades.
       </p>
     </section>
   </body>
