@@ -2,7 +2,6 @@
 /* "IM Fell Double Pica", "Hammersmith One" */
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=IM+Fell+Double+Pica:ital@0;1&display=swap");
 
-/* Hide vegalite menu */
 div[style*="position: absolute"] > .vega-actions,
 .vega-embed details {
   display: none !important;
@@ -113,4 +112,8 @@ body {
 
 .information-text {
   width: 90%;
+}
+
+#P1-1 {
+  width: 80%;
 }
