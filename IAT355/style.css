@@ -19,7 +19,7 @@ html,
 body {
   font-family: "IM Fell Double Pica", serif, sans-serif;
   color: white;
-  font-size: 5vh;
+  font-size: 3vh;
 
   background-color: var(--primary-gray);
   width: 100%;
