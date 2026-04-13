@@ -1,6 +1,6 @@
 /* Fonts */
-/* "IM Fell Double Pica", "Hammersmith One" */
-@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=IM+Fell+Double+Pica:ital@0;1&display=swap");
+/* "IM Fell Double Pica", "Hammersmith One", "Enriqueta" */
+@import url("https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&family=Hammersmith+One&family=IM+Fell+Double+Pica:ital@0;1&display=swap");
 
 div[style*="position: absolute"] > .vega-actions,
 .vega-embed details {
@@ -88,6 +88,7 @@ header img {
 
 #tim-quote {
   /* font-family: "Hammersmith One", Verdana, sans-serif; */
+  font-family: "Enriqueta", serif;
   font-style: italic;
   font-size: 0.5rem;
   margin: 0;
@@ -223,4 +224,10 @@ header img {
 
 #P3-1 {
   width: 80%;
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
 }
