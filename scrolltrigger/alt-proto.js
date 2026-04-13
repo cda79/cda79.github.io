@@ -17,19 +17,4 @@ const observer = new IntersectionObserver(
   },
 );
 
-// const lenis = new Lenis({
-//   lerp: 0.1,
-//   smooth: true,
-//   direction: "vertical",
-//   wheelMultiplier: 1, // Scroll speed
-// });
-
-// // Use requestAnimationFrame to continuously update the scroll
-// function raf(time) {
-//   lenis.raf(time);
-//   requestAnimationFrame(raf);
-// }
-
-// requestAnimationFrame(raf);
-
 hiddenElements.forEach((item) => observer.observe(item));
