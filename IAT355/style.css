@@ -106,6 +106,14 @@ body {
 
 .question-text {
   font-family: "Hammersmith One", Verdana, sans-serif;
+  translate: -100%;
+  opacity: 1;
+  transition: 800ms ease;
+}
+
+.question-text.show {
+  translate: 0;
+  opacity: 1;
 }
 
 .information-text {

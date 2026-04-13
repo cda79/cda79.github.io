@@ -1,4 +1,4 @@
-// Initialize Lenis
+// -----------------Initialize Lenis for Smooth Scrolling-----------------
 const lenis = new Lenis({
   autoRaf: true,
   autoToggle: true,
@@ -16,7 +16,26 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-// Data loading & Visualizations
+// ------------ IntersectionObserver for animations ------------
+const documentEntries = document.querySelectorAll(".question-text");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      // check if each one is intersecting, then add the class
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  },
+  { threshold: 0, rootMargin: "0px 0px 0px 0px" },
+);
+
+documentEntries.forEach((img) => observer.observe(img));
+
+// ------------Data loading & Visualizations---------------
 
 async function fetchData() {
   const data = await d3.csv("./src/broadway_shows_finalized.csv");
