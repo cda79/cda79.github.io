@@ -35,6 +35,10 @@
 
   <!-- WEBSITE RENDERING -->
   <body>
+    <header>
+      <img src="src/mini-logo-svg.svg" alt="Broadway Blackout Logo" />
+    </header>
+
     <section id="hook">
       <div class="hook-container">
         <div class="hook-element-wrapper">
@@ -44,20 +48,19 @@
               height="480"
               width="854"
               autoplay
+              loop
               muted
               playsinline
             >
               <source src="src/clip.mp4" type="video/mp4" />
               Clip of Timothee Chalamet on CNN's Variety.
             </video>
-          </div>
-          <div class="quote-container">
-            <p>
-              “ I don't want to be working in ballet or opera, or you know,
-              things where it's like &#x2018;hey keep this thing alive&#x2019;
-              even though it's like, no one cares about this anymore.”
+            <p id="tim-quote">
+              - Timothee Chalamet on CNN's Variety (February 2026)
             </p>
-            <p id="quoter">- Timothee Chalamet</p>
+          </div>
+          <div class="intro-quote-container">
+            <img src="src/tim-quote.svg" />
           </div>
         </div>
       </div>

@@ -26,6 +26,21 @@ body {
   margin: 0;
 }
 
+header {
+  height: 4vh;
+  overflow: hidden;
+  padding-left: 1vw;
+  padding-top: 1vw;
+  position: sticky;
+  top: 0;
+}
+
+header img {
+  height: 40px;
+  width: auto;
+  opacity: 0.5;
+}
+
 /* ----------------Hook----------------- */
 #hook {
   width: 100%;
@@ -44,7 +59,6 @@ body {
 .hook-element-wrapper {
   display: flex;
   flex-direction: row;
-  gap: 3vw;
   align-items: center;
   justify-content: center;
   width: 80%;
@@ -61,19 +75,66 @@ body {
   overflow: hidden;
 }
 
-.quote-container {
-  display: flex;
+.intro-quote-container {
   width: 60%;
+  transform: translateX(10%) translateY(-10%);
   flex-direction: column;
+  overflow: visible;
 }
 
-.quote-container p {
+.intro-quote-container img {
+  scale: 1.25;
+}
+
+#tim-quote {
+  /* font-family: "Hammersmith One", Verdana, sans-serif; */
+  font-style: italic;
+  font-size: 0.5rem;
   margin: 0;
   padding: 0;
 }
 
-#quoter {
-  margin-top: 4vh;
+@media (max-width: 85rem) {
+  .intro-quote-container {
+    width: 60%;
+    flex-direction: column;
+    overflow: visible;
+    /* background-color: #b8231e; */
+    transform: translateX(-25%) translateY(-10%);
+  }
+  .intro-quote-container img {
+    scale: 0.8;
+  }
+}
+
+@media (max-width: 50rem) {
+  .intro-quote-container {
+    height: auto;
+  }
+  .hook-element-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+    align-items: center;
+    justify-content: center;
+  }
+  #hook {
+    width: 100%;
+    height: 70vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .hook-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-quote-container img {
+    scale: 0.7;
+  }
 }
 
 /* ----------------Intro----------------- */
@@ -85,6 +146,12 @@ body {
   justify-content: center;
   display: flex;
   flex-direction: column;
+  background-image: url("src/ticket.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom left;
+
+  background-position-x: -10%;
 }
 
 #intro .quote-container {
