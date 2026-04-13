@@ -9,7 +9,7 @@ div[style*="position: absolute"] > .vega-actions,
 
 :root {
   --primary-gray: #222116;
-  --primary-red: #b8231e;
+  --primary-red: rgb(184, 35, 30);
   --primary-yellow: #fdca8b;
   --gray1: #c2baa6;
 }
@@ -147,19 +147,38 @@ header img {
   justify-content: center;
   display: flex;
   flex-direction: column;
+
   background-image: url("src/ticket.png");
+  background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: bottom left;
-
-  background-position-x: -10%;
+  background-position-x: -15%;
+  background-position-y: 200px;
 }
 
-#intro .quote-container {
+.intro-subheading-container h1 {
+  font-family: "Hammersmith One", Verdana, sans-serif;
+  /* font-family: "Enriqueta", serif; */
+  font-weight: lighter;
   text-align: center;
-  margin-top: 5vh;
+  text-transform: uppercase;
+  /* margin-top: 5vh; */
+  font-size: 3vh;
+  max-width: 90%;
+  transform: translateX(6%);
 }
 
+#intro img {
+}
+
+@media (max-width: 85rem) {
+  #intro {
+    background-image:
+      linear-gradient(rgba(184, 35, 30, 0.842), rgba(184, 35, 30, 0.842)),
+      url("src/ticket.png");
+  }
+}
 /* ----------------P1----------------- */
 
 #P1 {
