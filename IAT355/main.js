@@ -1,3 +1,23 @@
+// Initialize Lenis
+const lenis = new Lenis({
+  autoRaf: true,
+  autoToggle: true,
+  anchors: true,
+  allowNestedScroll: true,
+  naiveDimensions: true,
+  stopInertiaOnNavigate: true,
+});
+
+// Use requestAnimationFrame to continuously update the scroll
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+// Data loading & Visualizations
+
 async function fetchData() {
   const data = await d3.csv("./src/broadway_shows_finalized.csv");
   return data;
@@ -5,6 +25,7 @@ async function fetchData() {
 
 fetchData().then(async (data) => {
   // Pure Javascript
+
   const vlSpec = vl
     .markLine({ point: true })
     .data(data)
