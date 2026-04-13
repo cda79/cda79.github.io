@@ -8,6 +8,21 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@5.6.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.21/dist/lenis.css"
+    />
+    <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+    <script>
+      new Lenis({
+        autoRaf: true,
+        autoToggle: true,
+        anchors: true,
+        allowNestedScroll: true,
+        naiveDimensions: true,
+        stopInertiaOnNavigate: true,
+      });
+    </script>
     <link rel="stylesheet" href="style.css" />
     <script>
       const options = {
@@ -19,8 +34,6 @@
           view.tooltip(new vegaTooltip.Handler().call);
         },
         view: {
-          // view constructor options
-          // remove the loader if you don't want to default to vega-datasets!
           loader: vega.loader({
             baseURL: "https://cdn.jsdelivr.net/npm/vega-datasets@2/",
           }),

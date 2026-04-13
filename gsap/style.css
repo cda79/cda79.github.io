@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: auto;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 500;
+  letter-spacing: 1.25;
+  overflow: hidden; /* Clips the text so it can "slide in" */
+}
+
+p {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0;
+  display: block;
+  overflow: hidden; /* Clips the text so it can "slide in" */
+}
+
+section {
+  position: relative;
+  width: 100vw;
+  background-color: rgb(26, 26, 26);
+  color: white;
+  scroll-behavior: initial;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
+.intro,
+.outro,
+#intro,
+#outro {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro h1,
+.outro h1 {
+  width: 60%;
+  text-align: center;
+  line-height: 1.1;
+}
+
+#cards {
+  height: auto;
+  display: block;
+}
+
+.card {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 1.5em;
+}
+
+.card-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.card-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Keep the image in the background */
+  border-radius: 150px;
+  overflow: hidden;
+}
+
+.card-img img {
+  transform: scale(2);
+}
+
+.card-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 10; /* Increase this */
+  pointer-events: none; /* Crucial: allows you to scroll 'through' the text layer */
+}
+
+.card-content .card-title {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.card-content .card-description {
+  text-align: center;
+  width: 40%;
+  margin-bottom: 3em;
+  position: relative;
+  /* transform: translateX(40px); */
+  /* opacity: 0; */
+  margin: 0;
+  display: block;
+}
+
+.char {
+  overflow: hidden; /* This creates the "reveal" effect container */
+  display: inline-block; /* Essential: transforms don't work on inline elements */
+}
+
+.char span {
+  display: inline-block; /* Allows the span to move inside the .char div */
+  transform: translateX(100%);
+  will-change: transform;
+}
+
+.char,
+.char span {
+  display: inline-block !important;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2rem;
+    letter-spacing: 0;
+  }
+
+  .intro h1,
+  .outro h1 {
+    width: 100%;
+  }
+
+  .card-content .card-description {
+    width: 90%;
+  }
+}
