@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Broadway Show Types</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+  <h1>Broadway Show Types</h1>
+  <p>Guess the proportion of each show type, then reveal the actual data!</p>
+
+  <div id="sliders">
+    <label>Musical: <input type="range" id="musical" min="0" max="100000" value="50000"> <span id="musicalVal">50000</span></label><br>
+    <label>Play: <input type="range" id="play" min="0" max="100000" value="50000"> <span id="playVal">50000</span></label><br>
+    <label>Opera: <input type="range" id="opera" min="0" max="100000" value="50000"> <span id="operaVal">50000</span></label><br>
+    <label>Revue: <input type="range" id="revue" min="0" max="100000" value="50000"> <span id="revueVal">50000</span></label><br>
+    <label>Burlesque: <input type="range" id="burlesque" min="0" max="100000" value="50000"> <span id="burlesqueVal">50000</span></label><br>
+    <label>Special: <input type="range" id="special" min="0" max="100000" value="50000"> <span id="specialVal">50000</span></label><br>
+    <label>Concert: <input type="range" id="concert" min="0" max="100000" value="50000"> <span id="concertVal">50000</span></label><br>
+  </div>
+
+  <br>
+  <label>
+    <input type="checkbox" id="revealed"> Reveal actual data
+  </label>
+
+  <div id="chart"></div>
+
+  <!-- Link to your JS file — must be at the bottom so HTML loads first -->
+  <script src="chart.js"></script>
+
+</body>
+</html>
