@@ -49,12 +49,12 @@ fetchData().then(async (data) => {
     .markLine({ point: true })
     .data(data)
     .encode(
-      // group the specific dates into Years
-      vl.x().fieldT("opening_date").timeUnit("year").title("Year Opened"),
+      // group the specific dates into Years - Year Opened
+      vl.x().fieldT("opening_date").timeUnit("year").title(null),
 
-      // count the number of titles in that year
-      vl.y().count().title("Number of Titles Opened"),
-
+      // count the number of titles in that year - Number of Titles Opened
+      vl.y().count().title(null),
+      vl.color().value("#222116"),
       // show the year and the count
       vl.tooltip([
         { field: "opening_date", timeUnit: "year", title: "Year" },
@@ -63,6 +63,25 @@ fetchData().then(async (data) => {
     )
     .width("container")
     .height(500)
+    .config({
+      font: "IM Fell Double Pica, serif, sans-serif",
+      background: "#c2baa6",
+      axis: {
+        domainColor: "#333", // The actual axis line color
+        tickColor: "#333", // The tick marks color
+        gridColor: "#eee", // The background grid color
+        labelFont: "Courier", // Specific font for labels if different from global
+        titleFont: "Arial", // Specific font for titles
+        labelFont: "Arial",
+        labelColor: "#eee",
+        titleColor: "red",
+      },
+      line: {
+        // stroke: "blue",
+        strokeWidth: 3, // Optional: make the line thicker
+      },
+      view: { stroke: "transparent" },
+    })
     .toSpec();
 
   const showtypes = [
@@ -91,7 +110,7 @@ fetchData().then(async (data) => {
       vl.x().fieldT("opening_date").timeUnit("year").title("Year Opened"),
       vl.y().count().title("Number of Titles Opened"),
       vl.color().fieldN("show_type").title("Show Type"),
-      vl.opacity().if(selectType, vl.value(0.75)).value(0.05),
+      vl.opacity().if(selectType, vl.value(1)).value(0.08),
       vl.tooltip([
         { field: "opening_date", timeUnit: "year", title: "Year" },
         { field: "show_type", title: "Show Type" },
@@ -100,6 +119,16 @@ fetchData().then(async (data) => {
     )
     .width("container")
     .height(500)
+    .config({
+      background: "#ffffff00",
+      axis: {
+        labelFont: "Arial",
+        labelColor: "gray",
+        titleFont: "Arial",
+        titleColor: "black",
+      },
+      view: { stroke: "transparent" },
+    })
     .toSpec();
 
   const musicalData = data.filter((d) => d.show_type === "Musical");
@@ -124,6 +153,22 @@ fetchData().then(async (data) => {
     )
     .width("container")
     .height(300)
+    .config({
+      font: "IM Fell Double Pica, serif, sans-serif",
+      background: "#ffffff00",
+      axis: {
+        domainColor: "#333", // The actual axis line color
+        tickColor: "#333", // The tick marks color
+        gridColor: "#eee", // The background grid color
+        labelFont: "Courier", // Specific font for labels if different from global
+        titleFont: "Arial", // Specific font for titles
+        labelFont: "Arial",
+        labelColor: "#eee",
+        titleColor: "red",
+      },
+
+      view: { stroke: "transparent" },
+    })
     .title("Original vs Revival Plays on Broadway by Decade")
     .toSpec();
 
