@@ -18,7 +18,7 @@ html,
 body {
   font-family: "IM Fell Double Pica", serif, sans-serif;
   color: white;
-  font-size: 2vw;
+  font-size: 1vw;
 
   background-color: var(--primary-gray);
   width: 100%;
@@ -238,13 +238,39 @@ header img {
 }
 
 .information-text {
-  font-size: 0.5rem;
   width: 90%;
   text-align: center;
 }
 
 #P1-1 {
   width: 80%;
+}
+
+.P1-card {
+  background-color: black;
+  display: flex;
+  border: 1px solid #cad0d2;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 1vw;
+
+  width: 20%;
+}
+
+.card-wrapper {
+  flex: 1 1 0%;
+  border: none;
+  border-radius: 0;
+  background-color: #3333339f;
+  overflow: hidden;
+}
+
+.card-wrapper img {
+  width: 100%; /* or any custom size */
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 /* ----------------P2----------------- */
