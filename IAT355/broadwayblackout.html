@@ -92,9 +92,62 @@
         (Hodge 2020, p.5), born from an amalgamation of British, French, and
         varied popular entertainment traditions.
       </p>
-      <p class="information-text">View genre by popularity (Interactive)</p>
-      <div id="P2-2"></div>
-      <!-- <div id="P2-1"></div> OLD GRAPH CODE-->
+      <h1>Broadway Show Types</h1>
+      <p>
+        Guess the proportion of each show type, then reveal the actual data!
+      </p>
+
+      <div id="sliders">
+        <label
+          >Musical:
+          <input type="range" id="musical" min="0" max="100000" value="50000" />
+          <span id="musicalVal">50000</span></label
+        ><br />
+        <label
+          >Play:
+          <input type="range" id="play" min="0" max="100000" value="50000" />
+          <span id="playVal">50000</span></label
+        ><br />
+        <label
+          >Opera:
+          <input type="range" id="opera" min="0" max="100000" value="50000" />
+          <span id="operaVal">50000</span></label
+        ><br />
+        <label
+          >Revue:
+          <input type="range" id="revue" min="0" max="100000" value="50000" />
+          <span id="revueVal">50000</span></label
+        ><br />
+        <label
+          >Burlesque:
+          <input
+            type="range"
+            id="burlesque"
+            min="0"
+            max="100000"
+            value="50000"
+          />
+          <span id="burlesqueVal">50000</span></label
+        ><br />
+        <label
+          >Special:
+          <input type="range" id="special" min="0" max="100000" value="50000" />
+          <span id="specialVal">50000</span></label
+        ><br />
+        <label
+          >Concert:
+          <input type="range" id="concert" min="0" max="100000" value="50000" />
+          <span id="concertVal">50000</span></label
+        ><br />
+      </div>
+
+      <br />
+      <label>
+        <input type="checkbox" id="revealed" /> Reveal actual data
+      </label>
+
+      <div id="chart"></div>
+      <div id="P2-1"></div>
     </section>
     <section id="P3">
       <p class="question-text">Musicals: Dominance of Original vs. Revival</p>
@@ -106,5 +159,6 @@
       <div id="P3-1"></div>
     </section>
     <script defer type="module" src="main.js"></script>
+    <script defer src="chart.js"></script>
   </body>
 </html>
