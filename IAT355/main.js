@@ -45,6 +45,7 @@ async function fetchData() {
 fetchData().then(async (data) => {
   // Pure Javascript
 
+  // ---- P1: dark gray section (LINE GRAPH) ----
   const vlSpec = vl
     .markLine({ point: true })
     .data(data)
@@ -54,7 +55,7 @@ fetchData().then(async (data) => {
 
       // count the number of titles in that year - Number of Titles Opened
       vl.y().count().title(null),
-      vl.color().value("#222116"),
+      vl.color().value("#fdca8b"), // Same colour as BROADWAY
       // show the year and the count
       vl.tooltip([
         { field: "opening_date", timeUnit: "year", title: "Year" },
@@ -65,24 +66,24 @@ fetchData().then(async (data) => {
     .height(500)
     .config({
       font: "IM Fell Double Pica, serif, sans-serif",
-      background: "#c2baa6",
+      background: "#222116",
       axis: {
-        domainColor: "#333", // The actual axis line color
-        tickColor: "#333", // The tick marks color
-        gridColor: "#eee", // The background grid color
+        domainColor: "#c2baa6", // The actual axis line color
+        tickColor: "#c2baa6", // The tick marks color
+        gridColor: "rgba(194,186,166,0.15)", // The background grid color
         labelFont: "Courier", // Specific font for labels if different from global
         titleFont: "Arial", // Specific font for titles
         labelFont: "Arial",
-        labelColor: "#222116",
-        titleColor: "red",
+        labelColor: "#c2baa6",
+        titleColor: "#c2baa6",
       },
-      line: {
-        strokeWidth: 3, // Optional: make the line thicker
-      },
+      line: { strokeWidth: 3, }, // Optional: make the line thicker
       view: { stroke: "transparent" },
     })
     .toSpec();
 
+
+  // ---- P2: red section (DOTTED GRAPH) ----
   const showtypes = [
     ...new Set(
       data
@@ -119,18 +120,30 @@ fetchData().then(async (data) => {
     .width("container")
     .height(500)
     .config({
-      background: "#c2baa6",
+      font: "IM Fell Double Pica, serif",
+      background: "#dcd2ba",
       axis: {
-        labelFont: "Arial",
-        labelColor: "gray",
+        domainColor: "#433d2f",
+        tickColor: "#433d2f",
+        gridColor: "rgba(0,0,0,0.15)",
+        labelFont: "Courier",
         titleFont: "Arial",
-        titleColor: "black",
+        labelColor: "#433d2f",
+        titleColor: "#433d2f",
+      },
+      legend: {
+        labelFont: "Courier",
+        titleFont: "Arial",
+        labelColor: "#433d2f",
+        titleColor: "#433d2f",
+        fillColor: "transparent",
+        strokeColor: "transparent",
       },
       view: { stroke: "transparent" },
     })
     .toSpec();
 
-  // -------------- BAR GRAPH -----------------
+  // ---- P3: dark gray section (BAR GRAPH) ----
 
   const musicalData = data.filter((d) => d.show_type === "Musical");
 
@@ -156,18 +169,30 @@ fetchData().then(async (data) => {
     .height(300)
     .config({
       font: "IM Fell Double Pica, serif, sans-serif",
-      background: "#ffffff00",
+      background: "#222116",
       axis: {
-        domainColor: "#333", // The actual axis line color
-        tickColor: "#333", // The tick marks color
-        gridColor: "#eee", // The background grid color
+        domainColor: "#c2baa6", // The actual axis line color
+        tickColor: "#c2baa6", // The tick marks color
+        gridColor: "rgba(194,186,166,0.15)", // The background grid color
         labelFont: "Courier", // Specific font for labels if different from global
         titleFont: "Arial", // Specific font for titles
-        labelFont: "Arial",
-        labelColor: "#eee",
-        titleColor: "red",
+        labelColor: "#c2baa6",
+        titleColor: "#c2baa6",
       },
-
+      title: {
+        color: "#c2baa6",
+        font: "IM Fell Double Pica, serif",
+        fontSize: 16,
+        fontWeight: "normal",
+      },
+      legend: {
+        labelFont: "Courier",
+        titleFont: "Arial",
+        labelColor: "#c2baa6",
+        titleColor: "#c2baa6",
+        fillColor: "transparent",
+        strokeColor: "transparent",
+      },
       view: { stroke: "transparent" },
     })
     .title("Original vs Revival Plays on Broadway by Decade")
