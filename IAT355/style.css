@@ -193,17 +193,21 @@ header img {
 
 .question-text {
   font-family: "Hammersmith One", Verdana, sans-serif;
-  translate: -100%;
-  opacity: 1;
+  /* come in from left */
+  transform: translateY(-10px);
+  opacity: 0;
   transition: 800ms ease;
+  text-transform: uppercase;
 }
 
 .question-text.show {
-  translate: 0;
+  /* translate: 0; */
+  transform: translateY(0px);
   opacity: 1;
 }
 
 .information-text {
+  font-size: 0.5rem;
   width: 90%;
   text-align: center;
 }
