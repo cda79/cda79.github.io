@@ -6,31 +6,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@5.6.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip@0.34.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
-
     <link rel="stylesheet" href="style.css" />
-    <script>
-      const options = {
-        config: {
-          // Vega-Lite default configuration
-        },
-        init: (view) => {
-          // initialize tooltip handler
-          view.tooltip(new vegaTooltip.Handler().call);
-        },
-        view: {
-          loader: vega.loader({
-            baseURL: "https://cdn.jsdelivr.net/npm/vega-datasets@2/",
-          }),
-          renderer: "canvas",
-        },
-      };
-      // register vega and vega-lite with the API
-      vl.register(vega, vegaLite, options);
-    </script>
-    <style></style>
   </head>
 
   <!-- WEBSITE RENDERING -->
@@ -82,6 +60,19 @@
         decline in the subsequent decades.
       </p>
       <div id="P1-1"></div>
+      <div class="P1-card">
+        <div class="card-wrapper">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum
+            consequuntur quos nam nostrum totam ipsa deleniti dolores, ipsum
+            culpa mollitia! Nisi non exercitationem veniam quis praesentium
+            numquam voluptas vitae aspernatur?
+          </p>
+        </div>
+        <div class="card-wrapper">
+          <img src="src/p1-card1.png" />
+        </div>
+      </div>
     </section>
     <section id="P2">
       <p class="question-text">
@@ -92,7 +83,61 @@
         (Hodge 2020, p.5), born from an amalgamation of British, French, and
         varied popular entertainment traditions.
       </p>
-      <p class="information-text">View genre by popularity (Interactive)</p>
+      <h1>Broadway Show Types</h1>
+      <p>
+        Guess the proportion of each show type, then reveal the actual data!
+      </p>
+
+      <div id="sliders">
+        <label
+          >Musical:
+          <input type="range" id="musical" min="0" max="100000" value="50000" />
+          <span id="musicalVal">50000</span></label
+        ><br />
+        <label
+          >Play:
+          <input type="range" id="play" min="0" max="100000" value="50000" />
+          <span id="playVal">50000</span></label
+        ><br />
+        <label
+          >Opera:
+          <input type="range" id="opera" min="0" max="100000" value="50000" />
+          <span id="operaVal">50000</span></label
+        ><br />
+        <label
+          >Revue:
+          <input type="range" id="revue" min="0" max="100000" value="50000" />
+          <span id="revueVal">50000</span></label
+        ><br />
+        <label
+          >Burlesque:
+          <input
+            type="range"
+            id="burlesque"
+            min="0"
+            max="100000"
+            value="50000"
+          />
+          <span id="burlesqueVal">50000</span></label
+        ><br />
+        <label
+          >Special:
+          <input type="range" id="special" min="0" max="100000" value="50000" />
+          <span id="specialVal">50000</span></label
+        ><br />
+        <label
+          >Concert:
+          <input type="range" id="concert" min="0" max="100000" value="50000" />
+          <span id="concertVal">50000</span></label
+        ><br />
+      </div>
+
+      <br />
+      <label>
+        <input type="checkbox" id="revealed" /> Reveal actual data
+      </label>
+
+      <div id="chart"></div>
       <div id="P2-1"></div>
     </section>
     <section id="P3">

@@ -200,9 +200,6 @@ header img {
   transform: translateX(6%);
 }
 
-#intro img {
-}
-
 @media (max-width: 85rem) {
   #intro {
     background-image:

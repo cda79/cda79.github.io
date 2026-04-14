@@ -1,3 +1,20 @@
+const options = {
+  config: {},
+  init: (view) => {
+    // Note: vegaTooltip is the global variable created by the script
+    view.tooltip(new vegaTooltip.Handler().call);
+  },
+  view: {
+    loader: vega.loader({
+      baseURL: "https://cdn.jsdelivr.net/npm/vega-datasets@2",
+    }),
+    renderer: "canvas",
+  },
+};
+
+// This must run after vega, vegaLite, and vl-api scripts have loaded
+vl.register(vega, vegaLite, options);
+
 // -----------------Initialize Lenis for Smooth Scrolling-----------------
 const lenis = new Lenis({
   autoRaf: true,
@@ -77,11 +94,10 @@ fetchData().then(async (data) => {
         labelColor: "#c2baa6",
         titleColor: "#c2baa6",
       },
-      line: { strokeWidth: 3, }, // Optional: make the line thicker
+      line: { strokeWidth: 3 }, // Optional: make the line thicker
       view: { stroke: "transparent" },
     })
     .toSpec();
-
 
   // ---- P2: red section (DOTTED GRAPH) ----
   const showtypes = [
