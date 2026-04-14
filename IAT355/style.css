@@ -41,6 +41,14 @@ header img {
   opacity: 0.5;
 }
 
+/* Vegalite */
+
+#vg-tooltip-element {
+  font-family: sans-serif;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px rgb(255, 0, 0);
+}
+
 /* ----------------Hook----------------- */
 #hook {
   width: 100%;
