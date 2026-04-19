@@ -58,10 +58,10 @@ function updateChart() {
         title: null,
       },
       tooltip: [
-        { field: "show_type", title: "Show Type", type: "nominal" },
+        { field: "show_type", title: "Show Type:", type: "nominal" },
         {
           field: "total_performances",
-          title: "Total Performances",
+          title: "Total Performances:",
           type: "quantitative",
         },
       ],

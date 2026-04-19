@@ -34,7 +34,9 @@ function raf(time) {
 requestAnimationFrame(raf);
 
 // ------------ IntersectionObserver for animations ------------
-const documentEntries = document.querySelectorAll(".question-text");
+const documentEntries = document.querySelectorAll(
+  ".question-text, .overlay-box-container",
+);
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -63,21 +65,48 @@ fetchData().then(async (data) => {
   // Pure Javascript
 
   // ---- P1: dark gray section (LINE GRAPH) ----
-  const vlSpec = vl
-    .markLine({ point: true })
-    .data(data)
-    .encode(
-      // group the specific dates into Years - Year Opened
-      vl.x().fieldT("opening_date").timeUnit("year").title(null),
+  const vlSpecA = vl
+    .layer(
+      // Layer 1: The background line (All Blue)
+      vl
+        .markLine({
+          point: true,
+          point: { color: "#c2baa6" },
+          color: "#c2baa6",
+        })
+        .data(data)
+        .encode(
+          // group the specific dates into Years - Year Opened
+          vl.x().fieldT("opening_date").timeUnit("year").title(null),
 
-      // count the number of titles in that year - Number of Titles Opened
-      vl.y().count().title(null),
-      vl.color().value("#fdca8b"), // Same colour as BROADWAY
-      // show the year and the count
-      vl.tooltip([
-        { field: "opening_date", timeUnit: "year", title: "Year" },
-        { aggregate: "count", title: "Total Titles Opened" },
-      ]),
+          // count the number of titles in that year - Number of Titles Opened
+          vl.y().count().title(null),
+          vl.color().value("#c2baa6"), // Same colour as BROADWAY
+          // show the year and the count
+          vl.tooltip([
+            { field: "opening_date", timeUnit: "year", title: "Year:" },
+            { aggregate: "count", title: "Titles Opened:" },
+          ]),
+        ),
+
+      // Layer 2: The highlight line (Red)
+      vl
+        .markLine({ point: { color: "#b8231e" }, color: "#b8231e" })
+        .data(data)
+        .transform(
+          // Filter the data just for this layer
+          vl.filter(
+            "year(datum.opening_date) >= 1990 && year(datum.opening_date) <= 2020",
+          ),
+        )
+        .encode(
+          vl.x().fieldT("opening_date").timeUnit("year"),
+          vl.y().count(),
+          vl.tooltip([
+            { field: "opening_date", timeUnit: "year", title: "Year:" },
+            { aggregate: "count", title: "Titles Opened:" },
+          ]),
+        ),
     )
     .width("container")
     .height("container")
@@ -90,10 +119,9 @@ fetchData().then(async (data) => {
         tickColor: "#c2baa6", // The tick marks color
         gridColor: "rgba(194,186,166,0.15)", // The background grid color
         labelFont: "Courier", // Specific font for labels if different from global
-        titleFont: "Arial", // Specific font for titles
-        labelFont: "Arial",
         labelColor: "#c2baa6",
         titleColor: "#c2baa6",
+        labelAngle: "-30",
       },
       line: { strokeWidth: 3 }, // Optional: make the line thicker
       view: { stroke: "transparent" },
@@ -129,9 +157,9 @@ fetchData().then(async (data) => {
       vl.color().fieldN("show_type").title("Show Type"),
       vl.opacity().if(selectType, vl.value(1)).value(0.08),
       vl.tooltip([
-        { field: "opening_date", timeUnit: "year", title: "Year" },
-        { field: "show_type", title: "Show Type" },
-        { aggregate: "count", title: "Count" },
+        { field: "opening_date", timeUnit: "year", title: "Year:" },
+        { field: "show_type", title: "Show Type:" },
+        { aggregate: "count", title: "Count:" },
       ]),
     )
     .width("container")
@@ -147,6 +175,7 @@ fetchData().then(async (data) => {
         titleFont: "Arial",
         labelColor: "#433d2f",
         titleColor: "#433d2f",
+        labelAngle: "-30",
       },
       legend: {
         labelFont: "Courier",
@@ -199,6 +228,8 @@ fetchData().then(async (data) => {
         titleFont: "Arial", // Specific font for titles
         labelColor: "#c2baa6",
         titleColor: "#c2baa6",
+        labelAngle: "-30",
+        titlePadding: 30,
       },
       title: {
         color: "#c2baa6",
@@ -220,7 +251,7 @@ fetchData().then(async (data) => {
     .toSpec();
 
   // Render the graphs
-  render("#P1-1", vlSpec);
+  render("#P1-1", vlSpecA);
   render("#P2-1", vlSpec2);
   render("#P3-1", vlSpec3);
 });
