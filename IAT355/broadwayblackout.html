@@ -8,7 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@5.6.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
-
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
     <link rel="stylesheet" href="style.css" />
     <script>
       const options = {
@@ -115,37 +118,49 @@
         <!-- chart -->
         <div id="P1-1"></div>
       </div>
-      <h2>The Golden Age of Broadway</h2>
-      <p>
-        The golden age of Broadway lines up with the post World War I economic
-        boom known as the Roaring Twenties (Cunningham). Rising incomes and
-        technological growth gave Americans more time and money for leisure, and
-        Broadway was a direct beneficiary, with iconic productions like Chicago
-        and the Great Gasby, cementing this district as a cultural centerpiece
-        of the decade (Broadway Inbound).
-      </p>
-      <h2>The 1920s and Onwards</h2>
-      <p>
-        The sharp decline in openings following the 1920s peak aligns directly
-        with the Great Depression, which spanned from 1929 to 1939. Widespread
-        unemployment and collapsing household incomes left little room for
-        leisure spending, cutting into both audience demand and the financial
-        viability of producing new shows. The result was a decade-long
-        contraction that effectively reversed Broadway's golden era growth.
-      </p>
+      <div class="text-column-wrapper">
+        <div class="text-column-container">
+          <h2>The Golden Age of Broadway</h2>
+          <p>
+            The golden age of Broadway lines up with the post World War I
+            economic boom known as the Roaring Twenties (Cunningham). Rising
+            incomes and technological growth gave Americans more time and money
+            for leisure, and Broadway was a direct beneficiary, with iconic
+            productions like Chicago and the Great Gasby, cementing this
+            district as a cultural centerpiece of the decade (Broadway Inbound).
+          </p>
+        </div>
+        <div class="text-column-container">
+          <h2>The 1920s and Onwards</h2>
+          <p>
+            The sharp decline in openings following the 1920s peak aligns
+            directly with the Great Depression, which spanned from 1929 to 1939.
+            Widespread unemployment and collapsing household incomes left little
+            room for leisure spending, cutting into both audience demand and the
+            financial viability of producing new shows. The result was a
+            decade-long contraction that effectively reversed Broadway's golden
+            era growth.
+          </p>
+        </div>
+      </div>
     </section>
     <section id="P2">
-      <p class="question-text">
-        Total Showings by Show Type on Broadway (1850s–2010s)
-      </p>
-      <p class="information-text">
-        The musical is widely regarded as a "quintessentially American art form"
-        (Hodge 2020, p.5), born from an amalgamation of British, French, and
-        varied popular entertainment traditions.
-      </p>
-      <!-- dot graph -->
-      <p class="information-text">View genre by popularity (Interactive)</p>
-      <div id="P2-1"></div>
+      <div class="graph-info-wrapper">
+        <div class="dot-info-container">
+          <p class="question-text">
+            Total Showings by Show Type on Broadway (1850s–2010s)
+          </p>
+          <p class="information-text">
+            The musical is widely regarded as a "quintessentially American art
+            form" (Hodge 2020, p.5), born from an amalgamation of British,
+            French, and varied popular entertainment traditions.
+          </p>
+        </div>
+        <!-- dot graph -->
+        <div class="P2-1-graph">
+          <div id="P2-1"></div>
+        </div>
+      </div>
 
       <p class="question-text">
         Guess the proportion of each show type, then reveal the actual data!

@@ -23,6 +23,8 @@ const lenis = new Lenis({
   allowNestedScroll: true,
   naiveDimensions: true,
   stopInertiaOnNavigate: true,
+  orientation: "vertical", // Forces vertical orientation
+  gestureOrientation: "vertical", // Ensures gestures (like trackpad) are vertical only
 });
 
 // Use requestAnimationFrame to continuously update the scroll
@@ -154,7 +156,7 @@ fetchData().then(async (data) => {
     .encode(
       vl.x().fieldT("opening_date").timeUnit("year").title("Year Opened"),
       vl.y().count().title("Number of Titles Opened"),
-      vl.color().fieldN("show_type").title("Show Type"),
+      vl.color().fieldN("show_type").title("Show Type").legend({ title: null }),
       vl.opacity().if(selectType, vl.value(1)).value(0.08),
       vl.tooltip([
         { field: "opening_date", timeUnit: "year", title: "Year:" },
@@ -162,31 +164,33 @@ fetchData().then(async (data) => {
         { aggregate: "count", title: "Count:" },
       ]),
     )
-    .width("container")
-    .height(500)
     .config({
       font: "IM Fell Double Pica, serif",
-      background: "#dcd2ba",
+      background: "#ebe6dc",
       axis: {
         domainColor: "#433d2f",
         tickColor: "#433d2f",
         gridColor: "rgba(0,0,0,0.15)",
         labelFont: "Courier",
-        titleFont: "Arial",
+        titleFont: "Habibi",
         labelColor: "#433d2f",
         titleColor: "#433d2f",
         labelAngle: "-30",
+        titlePadding: 30,
+        titleFontSize: 16,
       },
       legend: {
-        labelFont: "Courier",
-        titleFont: "Arial",
+        titleFontSize: 20,
+        fillColor: "#c2baa600",
+        labelFont: "Enriqueta",
         labelColor: "#433d2f",
-        titleColor: "#433d2f",
-        fillColor: "transparent",
-        strokeColor: "transparent",
+        labelFontSize: 18,
       },
       view: { stroke: "transparent" },
     })
+    .width("container")
+    .height("450")
+    .autosize({ type: "fit", resize: "true", contains: "padding" })
     .toSpec();
 
   // ---- P3: dark gray section (BAR GRAPH) ----
@@ -225,7 +229,7 @@ fetchData().then(async (data) => {
         tickColor: "#c2baa6", // The tick marks color
         gridColor: "rgba(194,186,166,0.15)", // The background grid color
         labelFont: "Courier", // Specific font for labels if different from global
-        titleFont: "Arial", // Specific font for titles
+        titleFont: "Habibi", // Specific font for titles
         labelColor: "#c2baa6",
         titleColor: "#c2baa6",
         labelAngle: "-30",
