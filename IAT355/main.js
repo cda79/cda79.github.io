@@ -80,7 +80,8 @@ fetchData().then(async (data) => {
       ]),
     )
     .width("container")
-    .height(500)
+    .height("container")
+    .autosize({ type: "fit", resize: "true" })
     .config({
       font: "IM Fell Double Pica, serif, sans-serif",
       background: "#222116",
@@ -174,7 +175,11 @@ fetchData().then(async (data) => {
     .encode(
       vl.x().fieldO("decade").title("Decade"),
       vl.y().count().title("Number of Shows"),
-      vl.color().fieldN("production_type").title("Production Type"),
+      vl
+        .color()
+        .fieldN("production_type")
+        .title("Production Type")
+        .scale({ scheme: "browns" }),
       vl.tooltip([
         { field: "decade", title: "Decade" },
         { field: "production_type", title: "Production Type" },
@@ -221,6 +226,6 @@ fetchData().then(async (data) => {
 });
 
 async function render(viewID, spec) {
-  const result = await vegaEmbed(viewID, spec);
+  const result = await vegaEmbed(viewID, spec, { actions: false });
   result.view.run();
 }

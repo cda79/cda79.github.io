@@ -6,7 +6,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@5.6.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
 
@@ -73,27 +72,78 @@
     </section>
     <section id="P1">
       <p class="question-text">
-        How has the popularity of Broadway shows shifted across decades from
-        1900-2020?
+        How has the popularity of Broadway shows shifted across 1900-2020?
       </p>
       <p class="information-text">
         Broadway saw a surge in the volume of titles opened in the 1900s and
         achieved its all time peak during the 1920s, before meeting a sharp
         decline in the subsequent decades.
       </p>
-      <div id="P1-1"></div>
+
+      <div class="graph-container">
+        <div id="P1-1"></div>
+      </div>
+
+      <!-- <div class="overlay-box-container">
+          <div class="overlay-box-wrapper">
+            <div class="overlay-element">
+              <img src="src/p1-card1.png" />
+            </div>
+            <div class="overlay-element">
+              <p>
+                The surge in openings during the 1900s can be partly attributed
+                to a wave of new theaters being built in the Broadway district,
+                including the Republic in 1900, the Lyric and New Amsterdam in
+                1903, and the Lew Fields in 1904 (Gillespie).
+              </p>
+            </div>
+          </div>
+        </div> -->
     </section>
     <section id="P2">
       <p class="question-text">
-        Total showings by show type in Broadway across 2 centuries
+        Total Showings by Show Type on Broadway (1850s–2010s)
       </p>
       <p class="information-text">
         The musical is widely regarded as a "quintessentially American art form"
         (Hodge 2020, p.5), born from an amalgamation of British, French, and
         varied popular entertainment traditions.
       </p>
+      <!-- dot graph -->
       <p class="information-text">View genre by popularity (Interactive)</p>
       <div id="P2-1"></div>
+
+      <p class="question-text">
+        Guess the proportion of each show type, then reveal the actual data!
+      </p>
+      <div id="sliders">
+        <!-- prettier-ignore -->
+        <label>Musical: <input type="range" id="musical" min="0" max="100000" value="50000"> <span id="musicalVal">50000</span></label
+        ><br />
+        <!-- prettier-ignore -->
+        <label>Play: <input type="range" id="play" min="0" max="100000" value="50000"> <span id="playVal">50000</span></label
+        ><br />
+        <!-- prettier-ignore -->
+        <label>Opera: <input type="range" id="opera" min="0" max="100000" value="50000"> <span id="operaVal">50000</span></label
+        ><br />
+        <!-- prettier-ignore -->
+        <label>Revue: <input type="range" id="revue" min="0" max="100000" value="50000"> <span id="revueVal">50000</span></label
+        ><br />
+        <!-- prettier-ignore -->
+        <label>Burlesque: <input type="range" id="burlesque" min="0" max="100000" value="50000"> <span id="burlesqueVal">50000</span></label
+        ><br />
+        <!-- prettier-ignore -->
+        <label>Special: <input type="range" id="special" min="0" max="100000" value="50000"> <span id="specialVal">50000</span></label
+        ><br />
+        <!-- prettier-ignore -->
+        <label>Concert: <input type="range" id="concert" min="0" max="100000" value="50000"> <span id="concertVal">50000</span></label
+        ><br />
+      </div>
+      <label>
+        <input type="checkbox" id="revealed" /> Reveal actual data
+      </label>
+      <!-- pie chart -->
+      <div id="chart"></div>
     </section>
     <section id="P3">
       <p class="question-text">Musicals: Dominance of Original vs. Revival</p>
@@ -102,8 +152,10 @@
         throughout the 20th and 21st centuries, a trend shaped as much by
         financial calculation as artistic ambition.
       </p>
+      <!-- bar chart -->
       <div id="P3-1"></div>
     </section>
     <script defer type="module" src="main.js"></script>
+    <script src="chart.js"></script>
   </body>
 </html>
