@@ -344,7 +344,7 @@ h2 {
 }
 
 .graph-info-wrapper {
-  width: 80%;
+  width: 100%;
   height: max-content;
   display: flex;
   flex-direction: row;
@@ -353,7 +353,9 @@ h2 {
 
 .dot-info-container {
   flex: 1;
-  padding: 2rem;
+  padding-left: 5rem;
+  margin-right: 1vw;
+  width: 50%;
 }
 
 .dot-info-container .information-text,
