@@ -115,7 +115,7 @@ fetchData().then(async (data) => {
     .autosize({ type: "fit", resize: "true" })
     .config({
       font: "IM Fell Double Pica, serif, sans-serif",
-      background: "#222116",
+      background: "#222116b6",
       axis: {
         domainColor: "#c2baa6", // The actual axis line color
         tickColor: "#c2baa6", // The tick marks color

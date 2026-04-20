@@ -21,6 +21,7 @@ html,
 body {
   font-family: "Habibi", serif, sans-serif;
   color: var(--gray1);
+  letter-spacing: 0.5px;
   font-size: 1vw;
 
   background-color: var(--primary-gray);
@@ -48,7 +49,7 @@ header img {
 
 section {
   min-height: 90vh;
-  padding: 3rem 0;
+  padding-top: 3rem;
 }
 
 h2 {
@@ -134,7 +135,8 @@ h2 {
   /* font-family: "Hammersmith One", Verdana, sans-serif; */
   font-family: "Enriqueta", serif;
   font-style: italic;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
   margin: 0;
   padding: 0;
 }
@@ -201,17 +203,17 @@ h2 {
   background-position-y: 200px;
 }
 
-.intro-subheading-container h1 {
+#intro h1 {
   font-family: "Hammersmith One", Verdana, sans-serif;
   color: white;
-  /* font-family: "Enriqueta", serif; */
   font-weight: lighter;
   text-align: center;
   text-transform: uppercase;
-  /* margin-top: 5vh; */
   font-size: 2.5vh;
+  letter-spacing: 1px;
   max-width: 90%;
   transform: translateX(6%);
+  line-height: 1.75rem;
 }
 
 @media (max-width: 85rem) {
@@ -235,6 +237,7 @@ h2 {
 .question-text {
   font-family: "Hammersmith One", Verdana, sans-serif;
   font-size: 2.75vh;
+  letter-spacing: 2px;
   color: white;
   /* come in from top */
   transform: translateY(-10px);
@@ -250,7 +253,7 @@ h2 {
 }
 
 .information-text {
-  width: 90%;
+  width: 80%;
   text-align: center;
 }
 
@@ -277,7 +280,7 @@ h2 {
   left: 64%;
   top: 5%;
   font-family: "Enriqueta", serif;
-
+  letter-spacing: 1px;
   transform: translateX(-40px);
   opacity: 0;
   transition: 800ms ease;
@@ -315,6 +318,7 @@ h2 {
   color: white;
   left: 79%;
   top: 25%;
+  transition-delay: 0.1s;
 }
 
 .text-column-wrapper {
@@ -325,6 +329,28 @@ h2 {
   margin-top: 2rem;
 }
 
+.text-column-wrapper > * {
+  flex: 1;
+}
+
+.p2-transition-img {
+  height: 8vh;
+  width: 100%;
+  align-items: end;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: -1;
+  right: -10px;
+  top: 10px;
+  position: relative;
+
+  background-color: var(--primary-gray);
+}
+
+.p2-transition-img img {
+  height: 35vw;
+}
 /* ----------------P2----------------- */
 
 #P2 {
@@ -343,6 +369,14 @@ h2 {
   color: var(--primary-gray);
 }
 
+#P2 h2 {
+  color: var(--primary-gray);
+}
+
+#P2-intro-text {
+  margin-bottom: 3rem;
+}
+
 .graph-info-wrapper {
   width: 100%;
   height: max-content;
@@ -359,7 +393,8 @@ h2 {
 }
 
 .dot-info-container .information-text,
-.dot-info-container .question-text {
+.dot-info-container .question-text,
+.dot-info-container h2 {
   text-align: left;
 }
 
