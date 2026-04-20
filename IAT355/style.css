@@ -15,6 +15,7 @@ div[style*="position: absolute"] > .vega-actions,
   --primary-yellow: #fdca8b;
   --gray1: #c2baa6;
   --lightgray1: #dcd2ba;
+  --whitebroadway: #ebe6dc;
 }
 
 html,
@@ -73,7 +74,7 @@ h2 {
   box-shadow: 2px 2px 4px rgb(0, 0, 0);
 
   color: var(--primary-gray);
-  background-color: var(--lightgray1);
+  background-color: var(--whitebroadway);
 }
 
 #vg-tooltip-element td.key {
@@ -349,8 +350,9 @@ h2 {
 }
 
 .p2-transition-img img {
-  height: 35vw;
+  height: 40vw;
 }
+
 /* ----------------P2----------------- */
 
 #P2 {
@@ -378,7 +380,7 @@ h2 {
 }
 
 .graph-info-wrapper {
-  width: 100%;
+  width: 90%;
   height: max-content;
   display: flex;
   flex-direction: row;
@@ -387,9 +389,8 @@ h2 {
 
 .dot-info-container {
   flex: 1;
-  padding-left: 5rem;
-  margin-right: 1vw;
-  width: 50%;
+  padding-right: 2vw;
+  width: 100%;
 }
 
 .dot-info-container .information-text,
@@ -429,11 +430,44 @@ h2 {
   font-family: "Enriqueta";
   font-size: 16px;
   color: var(--primary-gray);
+  background-color: var(--whitebroadway);
 }
 
 .vega-bind-name {
   margin-left: 2rem;
   font-family: "Enriqueta";
+}
+
+/* pie chart */
+.P2-subsection-wrapper {
+  background-color: #b8231e62;
+  height: min-content;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.P2-pie-wrapper {
+  background-color: #70b81e62;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.p2-info-container {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.p2-info-container .information-text,
+.p2-info-container .question-text,
+.p2-info-container h2 {
+  max-width: 100%;
+  width: 100%;
+  text-align: left;
 }
 
 /* ----------------P3----------------- */

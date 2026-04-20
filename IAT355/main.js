@@ -130,7 +130,7 @@ fetchData().then(async (data) => {
     })
     .toSpec();
 
-  // ---- P2: red section (DOTTED GRAPH) ----
+  // ---- P2: white section (DOTTED GRAPH) ----
   const showtypes = [
     ...new Set(
       data
@@ -154,9 +154,9 @@ fetchData().then(async (data) => {
     .data(data)
     .params(selectType)
     .encode(
-      vl.x().fieldT("opening_date").timeUnit("year").title("Year Opened"),
-      vl.y().count().title("Number of Titles Opened"),
-      vl.color().fieldN("show_type").title("Show Type").legend({ title: null }),
+      vl.x().fieldT("opening_date").timeUnit("year").title("YEAR OPENED"),
+      vl.y().count().title("NUMBER OF TITLES OPENED"),
+      vl.color().fieldN("show_type").title("SHOW TYPE").legend({ title: null }),
       vl.opacity().if(selectType, vl.value(1)).value(0.08),
       vl.tooltip([
         { field: "opening_date", timeUnit: "year", title: "Year:" },
@@ -165,14 +165,13 @@ fetchData().then(async (data) => {
       ]),
     )
     .config({
-      font: "IM Fell Double Pica, serif",
       background: "#ebe6dc",
       axis: {
         domainColor: "#433d2f",
         tickColor: "#433d2f",
         gridColor: "rgba(0,0,0,0.15)",
         labelFont: "Courier",
-        titleFont: "Habibi",
+        titleFont: "Hammersmith One",
         labelColor: "#433d2f",
         titleColor: "#433d2f",
         labelAngle: "-30",

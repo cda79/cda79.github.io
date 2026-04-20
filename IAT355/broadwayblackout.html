@@ -158,28 +158,32 @@
       <p class="question-text">
         Total Showings by Show Type on Broadway (1850s–2010s)
       </p>
-      <p class="information-text" id="P2-intro-text">
+      <p class="information-text">
         The musical is widely regarded as a "quintessentially American art form"
         (Hodge 2020, p.5), born from an amalgamation of British, French, and
         varied popular entertainment traditions. Its dominance on Broadway
         reflects a broader cultural identity, as Wolf (2002) argues that the
         language of Broadway is the language of America, a stage where the
-        country's highest artistic ambitions are performed and preserved. It is
-        this cultural significance that has sustained the musical and the play
-        as Broadway's two defining show types across two centuries.
+        country's highest artistic ambitions are performed and preserved.
+      </p>
+      <p class="information-text" id="P2-intro-text">
+        It is this cultural significance that has sustained the musical and the
+        play as Broadway's two defining show types across two centuries.
       </p>
       <div class="graph-info-wrapper">
         <div class="dot-info-container">
-          <h2>Opera, Burlesque, and Ballet... <br />The Death of A Genre</h2>
+          <h2>Burlesque and The Death of A Genre</h2>
           <p class="information-text">
             Burlesque's near-disappearance from Broadway is largely attributed
             to Mayor Fiorello H. La Guardia's legislative crackdown in the late
             1940s (Caldwell), which targeted the genre's sexually provocative
-            performances and shut down the venues that hosted them. Combined
-            with stricter regulations on public alcohol consumption, these
-            measures effectively pushed Burlesque off Broadway by the 1940s. A
-            brief revival emerged in non-Broadway venues in the early 1990s,
-            though it never regained a foothold in the mainstream.
+            performances and shut down the venues that hosted them.
+          </p>
+          <p class="information-text">
+            Combined with stricter regulations on public alcohol consumption,
+            these measures effectively pushed Burlesque off Broadway by the
+            1940s. A brief revival emerged in non-Broadway venues in the early
+            1990s, though it never regained a foothold in the mainstream.
           </p>
         </div>
         <!-- dot graph -->
@@ -187,38 +191,61 @@
           <div id="P2-1"></div>
         </div>
       </div>
-
-      <p class="question-text">
-        Guess the proportion of each show type, then reveal the actual data!
-      </p>
-      <div id="sliders">
-        <!-- prettier-ignore -->
-        <label>Musical: <input type="range" id="musical" min="0" max="100000" value="50000"> <span id="musicalVal">50000</span></label
-        ><br />
-        <!-- prettier-ignore -->
-        <label>Play: <input type="range" id="play" min="0" max="100000" value="50000"> <span id="playVal">50000</span></label
-        ><br />
-        <!-- prettier-ignore -->
-        <label>Opera: <input type="range" id="opera" min="0" max="100000" value="50000"> <span id="operaVal">50000</span></label
-        ><br />
-        <!-- prettier-ignore -->
-        <label>Revue: <input type="range" id="revue" min="0" max="100000" value="50000"> <span id="revueVal">50000</span></label
-        ><br />
-        <!-- prettier-ignore -->
-        <label>Burlesque: <input type="range" id="burlesque" min="0" max="100000" value="50000"> <span id="burlesqueVal">50000</span></label
-        ><br />
-        <!-- prettier-ignore -->
-        <label>Special: <input type="range" id="special" min="0" max="100000" value="50000"> <span id="specialVal">50000</span></label
-        ><br />
-        <!-- prettier-ignore -->
-        <label>Concert: <input type="range" id="concert" min="0" max="100000" value="50000"> <span id="concertVal">50000</span></label
-        ><br />
+      <div class="P2-subsection-wrapper">
+        <div class="P2-pie-wrapper">
+          <div class="pie-options">
+            <p class="question-text">
+              Guess the proportion of each show type, then reveal the actual
+              data!
+            </p>
+            <div id="sliders">
+              <!-- prettier-ignore -->
+              <label>Musical: <input type="range" id="musical" min="0" max="100000" value="50000"> <span id="musicalVal">50000</span></label
+              ><br />
+              <!-- prettier-ignore -->
+              <label>Play: <input type="range" id="play" min="0" max="100000" value="50000"> <span id="playVal">50000</span></label
+              ><br />
+              <!-- prettier-ignore -->
+              <label>Opera: <input type="range" id="opera" min="0" max="100000" value="50000"> <span id="operaVal">50000</span></label
+              ><br />
+              <!-- prettier-ignore -->
+              <label>Revue: <input type="range" id="revue" min="0" max="100000" value="50000"> <span id="revueVal">50000</span></label
+              ><br />
+              <!-- prettier-ignore -->
+              <label>Burlesque: <input type="range" id="burlesque" min="0" max="100000" value="50000"> <span id="burlesqueVal">50000</span></label
+              ><br />
+              <!-- prettier-ignore -->
+              <label>Special: <input type="range" id="special" min="0" max="100000" value="50000"> <span id="specialVal">50000</span></label
+              ><br />
+              <!-- prettier-ignore -->
+              <label>Concert: <input type="range" id="concert" min="0" max="100000" value="50000"> <span id="concertVal">50000</span></label
+              ><br />
+            </div>
+            <label>
+              <input type="checkbox" id="revealed" /> Reveal actual data
+            </label>
+          </div>
+          <!-- pie chart -->
+          <div id="chart"></div>
+        </div>
+        <div class="p2-info-container">
+          <h2>...So what about Opera? <br />Was Timothee Chalamet right?</h2>
+          <p class="information-text">
+            Opera's limited presence on Broadway relative to other show types
+            stems from two structural barriers. First, the genre carries formal
+            audience expectations rooted in classical convention, demanding a
+            level of cultural familiarity that musical theatre does not require.
+          </p>
+          <p class="information-text">
+            Second, many canonical operas are performed in Italian, German, or
+            French, limiting accessibility for the predominantly
+            English-speaking Broadway audience. Together, these factors have
+            historically kept opera from competing for mainstream Broadway
+            programming, confining it to a small and consistent share of
+            productions across the dataset's two-century span.
+          </p>
+        </div>
       </div>
-      <label>
-        <input type="checkbox" id="revealed" /> Reveal actual data
-      </label>
-      <!-- pie chart -->
-      <div id="chart"></div>
     </section>
     <section id="P3">
       <p class="question-text">Musicals: Dominance of Original vs. Revival</p>
