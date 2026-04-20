@@ -197,31 +197,33 @@
             Guess the proportion of each show type, then reveal the actual data!
           </p>
           <div class="p2-pie-wrapper">
-            <div id="sliders">
-              <!-- prettier-ignore -->
-              <label><p>Musical:</p><input type="range" id="musical" min="0" max="100000" value="50000"> <span id="musicalVal">50000</span></label
-              ><br />
-              <!-- prettier-ignore -->
-              <label><p>Play:</p><input type="range" id="play" min="0" max="100000" value="50000"> <span id="playVal">50000</span></label
-              ><br />
-              <!-- prettier-ignore -->
-              <label><p>Opera:</p><input type="range" id="opera" min="0" max="100000" value="50000"> <span id="operaVal">50000</span></label
-              ><br />
-              <!-- prettier-ignore -->
-              <label><p>Revue:</p><input type="range" id="revue" min="0" max="100000" value="50000"> <span id="revueVal">50000</span></label
-              ><br />
-              <!-- prettier-ignore -->
-              <label><p>Burlesque:</p><input type="range" id="burlesque" min="0" max="100000" value="50000"> <span id="burlesqueVal">50000</span></label
-              ><br />
-              <!-- prettier-ignore -->
-              <label><p>Special:</p><input type="range" id="special" min="0" max="100000" value="50000"> <span id="specialVal">50000</span></label
-              ><br />
-              <!-- prettier-ignore -->
-              <label><p>Concert:</p><input type="range" id="concert" min="0" max="100000" value="50000"> <span id="concertVal">50000</span></label
-              ><br />
-              <label id="pie-checkbox">
-                <input type="checkbox" id="revealed" /> Reveal actual data
-              </label>
+            <div class="sliders-wrapper">
+              <div id="sliders">
+                <!-- prettier-ignore -->
+                <label><p>Musical:</p><input type="range" id="musical" min="0" max="100000" value="50000"> <span id="musicalVal">50000</span></label
+                ><br />
+                <!-- prettier-ignore -->
+                <label><p>Play:</p><input type="range" id="play" min="0" max="100000" value="50000"> <span id="playVal">50000</span></label
+                ><br />
+                <!-- prettier-ignore -->
+                <label><p>Opera:</p><input type="range" id="opera" min="0" max="100000" value="50000"> <span id="operaVal">50000</span></label
+                ><br />
+                <!-- prettier-ignore -->
+                <label><p>Revue:</p><input type="range" id="revue" min="0" max="100000" value="50000"> <span id="revueVal">50000</span></label
+                ><br />
+                <!-- prettier-ignore -->
+                <label><p>Burlesque:</p><input type="range" id="burlesque" min="0" max="100000" value="50000"> <span id="burlesqueVal">50000</span></label
+                ><br />
+                <!-- prettier-ignore -->
+                <label><p>Special:</p><input type="range" id="special" min="0" max="100000" value="50000"> <span id="specialVal">50000</span></label
+                ><br />
+                <!-- prettier-ignore -->
+                <label><p>Concert:</p><input type="range" id="concert" min="0" max="100000" value="50000"> <span id="concertVal">50000</span></label
+                ><br />
+                <label id="pie-checkbox">
+                  <input type="checkbox" id="revealed" /> Reveal actual data
+                </label>
+              </div>
             </div>
             <div id="chart"></div>
           </div>
