@@ -43,9 +43,10 @@ header {
 }
 
 header img {
-  height: 40px;
+  height: 100%;
   width: auto;
   opacity: 0.5;
+  object-fit: cover;
 }
 
 section {
@@ -177,24 +178,29 @@ h2 {
 @media (max-width: 85rem) {
   .intro-quote-container {
     width: 60%;
-    flex-direction: column;
     overflow: visible;
-    /* background-color: #b8231e; */
-    transform: translateX(-25%) translateY(-10%);
+    transform: translateX(20%) translateY(0%);
   }
   .intro-quote-container img {
-    scale: 0.8;
+    width: 100%;
+    height: 100%;
   }
 }
 
 @media (max-width: 50rem) {
+  #hook {
+    justify-content: flex-start;
+    padding-top: 0%;
+  }
   .intro-quote-container {
     height: auto;
   }
   .hook-element-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 4vw;
+    gap: 10vw;
+    width: 100%;
+    height: 100%;
     align-items: center;
     justify-content: center;
   }
@@ -210,10 +216,6 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .intro-quote-container img {
-    scale: 0.7;
   }
 }
 
@@ -313,10 +315,9 @@ h2 {
   color: white;
   background-color: #161511;
   z-index: 1;
-  height: max-content;
-  width: 12vw;
-  height: min-content;
-  left: 64%;
+  height: 50%;
+  width: 15vw;
+  left: 60%;
   top: 5%;
   font-family: "Enriqueta", serif;
   letter-spacing: 1px;
@@ -337,7 +338,7 @@ h2 {
 }
 .overlay-element {
   flex: 1;
-  overflow: hidden;
+  overflow: scroll;
 }
 .overlay-box-wrapper img {
   width: 100%;
@@ -356,7 +357,7 @@ h2 {
   background-color: var(--primary-red);
   color: white;
   left: 79%;
-  top: 25%;
+  top: 10%;
   transition-delay: 0.1s;
 }
 
@@ -396,6 +397,14 @@ h2 {
 
 .p1-transition-img img {
   height: 40vw;
+}
+
+@media (max-width: 80rem) {
+  .overlay-box-container {
+    width: 20%;
+    height: 40%;
+    left: 55%;
+  }
 }
 
 /* ----------------P2----------------- */
@@ -572,11 +581,6 @@ h2 {
   .graph-info-wrapper {
     flex-direction: column;
     gap: 3rem;
-  }
-
-  .overlay-box-container {
-    width: 20%;
-    left: 55%;
   }
 
   .graph-container {
