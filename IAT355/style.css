@@ -263,6 +263,7 @@ h2 {
   position: relative;
   height: 70vh;
   width: 90%;
+  margin-top: 2rem;
 }
 
 /* graph */
@@ -533,6 +534,8 @@ h2 {
 
 #P3-1 {
   width: 80%;
+  height: 70%;
+  margin-top: 3rem;
 }
 
 @media (prefers-reduced-motion) {

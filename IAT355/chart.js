@@ -67,7 +67,7 @@ function updateChart() {
       ],
     },
     width: "container",
-    height: 450,
+    height: 500,
     autosize: {
       type: "fit",
       resize: "true",

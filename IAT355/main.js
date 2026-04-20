@@ -79,10 +79,10 @@ fetchData().then(async (data) => {
         .data(data)
         .encode(
           // group the specific dates into Years - Year Opened
-          vl.x().fieldT("opening_date").timeUnit("year").title(null),
+          vl.x().fieldT("opening_date").timeUnit("year").title("YEAR"),
 
           // count the number of titles in that year - Number of Titles Opened
-          vl.y().count().title(null),
+          vl.y().count().title("NUMBER OF TITLES"),
           vl.color().value("#c2baa6"), // Same colour as BROADWAY
           // show the year and the count
           vl.tooltip([
@@ -120,10 +120,13 @@ fetchData().then(async (data) => {
         domainColor: "#c2baa6", // The actual axis line color
         tickColor: "#c2baa6", // The tick marks color
         gridColor: "rgba(194,186,166,0.15)", // The background grid color
-        labelFont: "Courier", // Specific font for labels if different from global
         labelColor: "#c2baa6",
         titleColor: "#c2baa6",
         labelAngle: "-30",
+        titlePadding: 30,
+        titleFontSize: 16,
+        labelFont: "Courier",
+        titleFont: "Enriqueta",
       },
       line: { strokeWidth: 3 }, // Optional: make the line thicker
       view: { stroke: "transparent" },
@@ -171,7 +174,7 @@ fetchData().then(async (data) => {
         tickColor: "#433d2f",
         gridColor: "rgba(0,0,0,0.15)",
         labelFont: "Courier",
-        titleFont: "Hammersmith One",
+        titleFont: "Enriqueta",
         labelColor: "#433d2f",
         titleColor: "#433d2f",
         labelAngle: "-30",
@@ -205,52 +208,53 @@ fetchData().then(async (data) => {
       vl.calculate("floor(datum.year_only / 10) * 10").as("decade"),
     )
     .encode(
-      vl.x().fieldO("decade").title("Decade"),
-      vl.y().count().title("Number of Shows"),
+      vl.x().fieldO("decade").title("DECADE"),
+      vl.y().count().title("NUMBER OF SHOWS"),
       vl
         .color()
         .fieldN("production_type")
         .title("Production Type")
-        .scale({ scheme: "browns" }),
+        .scale({ scheme: "browns" })
+        .legend({ title: null }),
       vl.tooltip([
-        { field: "decade", title: "Decade" },
-        { field: "production_type", title: "Production Type" },
-        { aggregate: "count", title: "Count" },
+        { field: "decade", title: "Decade: " },
+        { field: "production_type", title: "Production Type: " },
+        { aggregate: "count", title: "Count: " },
       ]),
     )
     .width("container")
     .height(300)
     .config({
-      font: "IM Fell Double Pica, serif, sans-serif",
-      background: "#222116",
+      background: "#222116b6",
       axis: {
-        domainColor: "#c2baa6", // The actual axis line color
-        tickColor: "#c2baa6", // The tick marks color
-        gridColor: "rgba(194,186,166,0.15)", // The background grid color
-        labelFont: "Courier", // Specific font for labels if different from global
-        titleFont: "Habibi", // Specific font for titles
+        domainColor: "#433d2f",
+        tickColor: "#433d2f",
+        gridColor: "#c2baa61a",
+        labelFont: "Courier",
+        titleFont: "Enriqueta",
         labelColor: "#c2baa6",
         titleColor: "#c2baa6",
         labelAngle: "-30",
         titlePadding: 30,
-      },
-      title: {
-        color: "#c2baa6",
-        font: "IM Fell Double Pica, serif",
-        fontSize: 16,
-        fontWeight: "normal",
+        titleFontSize: 16,
       },
       legend: {
-        labelFont: "Courier",
-        titleFont: "Arial",
+        titleFontSize: 20,
+        fillColor: "#c2baa600",
+        labelFont: "Enriqueta",
         labelColor: "#c2baa6",
-        titleColor: "#c2baa6",
-        fillColor: "transparent",
-        strokeColor: "transparent",
+        labelFontSize: 18,
       },
       view: { stroke: "transparent" },
     })
-    .title("Original vs Revival Plays on Broadway by Decade")
+    .title({
+      text: "ORIGINAL VS REVIVAL PLAYS ON BROADWAY BY DECADE",
+      font: "Hammersmith One",
+      fontSize: 20,
+      fontWeight: "lighter",
+      color: "#c2baa6",
+      offset: 30,
+    })
     .toSpec();
 
   // Render the graphs
