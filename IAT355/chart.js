@@ -66,8 +66,13 @@ function updateChart() {
         },
       ],
     },
-    width: 400,
-    height: 400,
+    width: "container",
+    height: 450,
+    autosize: {
+      type: "fit",
+      resize: "true",
+      contains: "padding",
+    },
     config: {
       font: "IM Fell Double Pica, serif, sans-serif",
       background: "#b8231e00",
@@ -80,7 +85,7 @@ function updateChart() {
         titleColor: "blue",
         fillColor: "#c2baa600",
         labelFont: "Enriqueta",
-        labelColor: "#ffffff",
+        labelColor: "#27271D",
         labelFontSize: 20,
       },
       line: { strokeWidth: 3 }, // Optional: make the line thicker
