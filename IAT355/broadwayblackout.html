@@ -150,7 +150,7 @@
         </div>
         <div class="text-column-container"></div>
       </div>
-      <div class="p2-transition-img">
+      <div class="p1-transition-img">
         <img src="src/p2-railings.svg" />
       </div>
     </section>
@@ -192,11 +192,11 @@
         </div>
       </div>
       <div class="P2-subsection-wrapper">
-        <div class="P2-pie-wrapper">
-          <h3 class="question-text">
+        <div class="p2-pie-container">
+          <p class="question-text">
             Guess the proportion of each show type, then reveal the actual data!
-          </h3>
-          <div class="pie-interaction-wrapper">
+          </p>
+          <div class="p2-pie-wrapper">
             <div id="sliders">
               <!-- prettier-ignore -->
               <label><p>Musical:</p><input type="range" id="musical" min="0" max="100000" value="50000"> <span id="musicalVal">50000</span></label
@@ -223,7 +223,6 @@
                 <input type="checkbox" id="revealed" /> Reveal actual data
               </label>
             </div>
-            <!-- pie chart -->
             <div id="chart"></div>
           </div>
         </div>
@@ -245,6 +244,7 @@
           </p>
         </div>
       </div>
+      <!-- <div class="p2-transition-div"></div> -->
     </section>
     <section id="P3">
       <p class="question-text">Musicals: Dominance of Original vs. Revival</p>
@@ -255,22 +255,35 @@
       </p>
       <!-- bar chart -->
       <div id="P3-1"></div>
-      <p class="information-text">
-        A 2020 investigation by Tony Award-winning producer Ken Davenport found
-        that Broadway's recoupment rate has held consistently at around 20%
-        since 1993 (Davenport), despite rising costs in production, technology,
-        and advertising
-      </p>
-      <p class="information-text">
-        The high number of original musicals in the early 20th century reflects
-        how new the genre was at the time. The musical as an art form is
-        commonly traced back to the 1866 production of The Black Crook (Dance
-        Informa Magazine), meaning the genre had only around three decades of
-        history by the turn of the century. With such a short history, there was
-        little existing material to revive, so original productions dominated
-        Broadway's programming as writers and composers worked to build and
-        define the genre.
-      </p>
+      <div class="text-column-wrapper">
+        <div class="text-column-container">
+          <img src="src/globes.svg" />
+        </div>
+        <div class="text-column-container">
+          <h2>Turn of the Century</h2>
+          <p class="information-text">
+            The high number of original musicals in the early 20th century
+            reflects how new the genre was at the time. The musical as an art
+            form is commonly traced back to the 1866 production of The Black
+            Crook (Dance Informa Magazine), meaning the genre had only around
+            three decades of history by the turn of the century. With such a
+            short history, there was little existing material to revive, so
+            original productions dominated Broadway's programming as writers and
+            composers worked to build and define the genre.
+          </p>
+          <p class="information-text">
+            A 2020 investigation by Tony Award-winning producer Ken Davenport
+            found that Broadway's recoupment rate has held consistently at
+            around 20% since 1993 (Davenport), despite rising costs in
+            production, technology, and advertising
+          </p>
+        </div>
+      </div>
+      <div class="top-scroll">
+        <a class="restart-button" href="#hook" title="Restart">
+          SCROLL TO THE TOP &#8657;</a
+        >
+      </div>
     </section>
     <script defer type="module" src="main.js"></script>
     <script src="chart.js"></script>
