@@ -569,6 +569,34 @@ h2 {
   .p2-pie-wrapper {
     flex-direction: column;
   }
+
+  .graph-info-wrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .overlay-box-container {
+    width: 20%;
+    left: 55%;
+  }
+
+  .graph-container {
+    width: 100%;
+  }
+
+  .dot-info-container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 60rem) {
+  .text-column-wrapper .text-column-container:nth-child(3) {
+    flex: 0;
+  }
+
+  .text-column-container {
+    background-color: #222116d2;
+  }
 }
 
 /* .p2-transition-div {
