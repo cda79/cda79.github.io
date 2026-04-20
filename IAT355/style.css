@@ -531,6 +531,7 @@ h2 {
   flex: 1;
   align-items: center;
   justify-content: center;
+  padding-right: 2rem;
 }
 
 #sliders {
@@ -560,16 +561,14 @@ h2 {
   flex-direction: column;
   flex: 4;
   padding-left: 2rem;
+  align-items: center;
+  justify-content: center;
 }
 .vega-embed.has-actions {
-  padding-right: 0 !important;
+  padding: 0 !important;
 }
 
 @media (max-width: 80rem) {
-  .p2-pie-wrapper {
-    flex-direction: column;
-  }
-
   .graph-info-wrapper {
     flex-direction: column;
     gap: 3rem;
@@ -590,12 +589,31 @@ h2 {
 }
 
 @media (max-width: 60rem) {
+  .P2-subsection-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .p2-pie-wrapper {
+    flex-direction: column;
+    margin-bottom: -30px;
+  }
+
+  .p2-info-container {
+    padding: 0;
+  }
+
   .text-column-wrapper .text-column-container:nth-child(3) {
     flex: 0;
   }
 
   .text-column-container {
     background-color: #222116d2;
+  }
+
+  .sliders-wrapper {
+    padding: 1rem;
   }
 }
 
@@ -643,6 +661,16 @@ h2 {
 
 #P3 .text-column-container img {
   width: 100%;
+}
+
+@media (max-width: 80rem) {
+  #P3-1 {
+    width: 95%;
+  }
+
+  #P3 .text-column-wrapper {
+    flex-direction: column;
+  }
 }
 
 @media (prefers-reduced-motion) {
