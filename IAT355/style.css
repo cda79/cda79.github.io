@@ -293,6 +293,8 @@ h2 {
   text-transform: uppercase;
   text-align: center;
   font-weight: 100;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .question-text.show {
@@ -681,12 +683,19 @@ h2 {
   padding-left: 3rem;
 }
 
+#P3 .text-column-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #P3 .text-column-container img {
-  width: 100%;
+  width: 90%;
 }
 
 .conclusion-section {
-  width: 80%;
+  width: 90%;
   height: min-content;
   display: flex;
   flex-direction: column;
