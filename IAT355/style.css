@@ -100,7 +100,7 @@ h2 {
 
 .restart-button {
   text-decoration: none;
-  color: var(--whitebroadway);
+  color: white;
   font-weight: lighter;
   font-family: "Enriqueta", serif;
   font-size: 1.25rem;
@@ -696,6 +696,14 @@ h2 {
 
 .conclusion-section .information-text {
   text-align: left !important;
+}
+
+.seperator {
+  min-height: 0.15vh;
+  min-width: 80%;
+  background: var(--gray1);
+  display: block;
+  margin-top: 3rem;
 }
 
 .citations {
