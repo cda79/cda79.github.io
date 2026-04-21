@@ -95,6 +95,7 @@ h2 {
   display: flex;
   transition: 1s ease;
   margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 .restart-button {
@@ -695,6 +696,23 @@ h2 {
 
 .conclusion-section .information-text {
   text-align: left !important;
+}
+
+.citations {
+  width: 80%;
+  padding: 1rem;
+  height: auto;
+  font-size: 0.75rem !important;
+}
+
+.citations ul {
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+.citations ul li {
+  margin-top: 1rem;
 }
 
 @media (max-width: 80rem) {
