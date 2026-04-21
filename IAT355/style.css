@@ -94,6 +94,7 @@ h2 {
   justify-content: center;
   display: flex;
   transition: 1s ease;
+  margin-top: 3rem;
 }
 
 .restart-button {
@@ -224,7 +225,6 @@ h2 {
   background-color: var(--primary-red);
   width: 100%;
   height: 90vh;
-  align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -249,6 +249,17 @@ h2 {
   max-width: 90%;
   transform: translateX(6%);
   line-height: 1.75rem;
+
+  align-items: center;
+}
+
+.intro-logo {
+  width: 100%;
+  max-height: 13rem;
+}
+
+.intro-logo img {
+  height: 100%;
 }
 
 @media (max-width: 85rem) {
@@ -338,7 +349,6 @@ h2 {
 }
 .overlay-element {
   flex: 1;
-  overflow: scroll;
 }
 .overlay-box-wrapper img {
   width: 100%;
@@ -351,6 +361,10 @@ h2 {
   font-size: 0.75rem;
   padding: 0.75rem 1rem;
   margin: 0;
+}
+
+#card-img {
+  overflow: hidden !important;
 }
 
 #red-card {
@@ -404,6 +418,9 @@ h2 {
     width: 20%;
     height: 40%;
     left: 55%;
+  }
+  .overlay-element {
+    overflow: scroll;
   }
 }
 
@@ -665,6 +682,19 @@ h2 {
 
 #P3 .text-column-container img {
   width: 100%;
+}
+
+.conclusion-section {
+  width: 80%;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.conclusion-section .information-text {
+  text-align: left !important;
 }
 
 @media (max-width: 80rem) {
