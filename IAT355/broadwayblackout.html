@@ -165,99 +165,107 @@
         (Hodge 2020, p.5), born from an amalgamation of British, French, and
         varied popular entertainment traditions.
       </p>
-      <div class="graph-info-wrapper">
-        <div class="dot-info-container">
-          <h2>Burlesque and The Death of A Genre</h2>
-          <p class="information-text">
-            <strong
-              >The musical's dominance on Broadway reflects a broader cultural
-              identity</strong
-            >, as Wolf (2002) argues that the language of Broadway is the
-            language of America, a stage where the country's highest artistic
-            ambitions are performed and preserved. It is this cultural
-            significance that has sustained the musical and the play as
-            Broadway's two defining show types across two centuries.
-          </p>
-          <p class="information-text">
-            <strong>Burlesque's</strong> near-disappearance from Broadway is
-            largely attributed to Mayor Fiorello H. La Guardia's legislative
-            crackdown in the late 1940s (Caldwell), which targeted the genre's
-            sexually provocative performances and shut down the venues that
-            hosted them.
-          </p>
-          <p class="information-text">
-            Combined with stricter regulations on public alcohol consumption,
-            these measures effectively pushed Burlesque off Broadway by the
-            1940s.
-            <strong
-              >A brief revival emerged in non-Broadway venues in the early
-              1990s, though it never regained a foothold in the
-              mainstream.</strong
-            >
-          </p>
-        </div>
-        <!-- dot graph -->
-        <div class="P2-1-graph">
-          <div id="P2-1"></div>
-        </div>
-      </div>
       <div class="P2-subsection-wrapper">
-        <div class="p2-pie-container">
-          <p class="question-text">
-            Guess the proportion of each show type, then reveal the actual data!
-          </p>
-          <div class="p2-pie-wrapper">
-            <div class="sliders-wrapper">
-              <div id="sliders">
-                <!-- prettier-ignore -->
-                <label><p>Musical:</p><input type="range" id="musical" min="0" max="100000" value="50000"> <span id="musicalVal">50000</span></label
-                ><br />
-                <!-- prettier-ignore -->
-                <label><p>Play:</p><input type="range" id="play" min="0" max="100000" value="50000"> <span id="playVal">50000</span></label
-                ><br />
-                <!-- prettier-ignore -->
-                <label><p>Opera:</p><input type="range" id="opera" min="0" max="100000" value="50000"> <span id="operaVal">50000</span></label
-                ><br />
-                <!-- prettier-ignore -->
-                <label><p>Revue:</p><input type="range" id="revue" min="0" max="100000" value="50000"> <span id="revueVal">50000</span></label
-                ><br />
-                <!-- prettier-ignore -->
-                <label><p>Burlesque:</p><input type="range" id="burlesque" min="0" max="100000" value="50000"> <span id="burlesqueVal">50000</span></label
-                ><br />
-                <!-- prettier-ignore -->
-                <label><p>Special:</p><input type="range" id="special" min="0" max="100000" value="50000"> <span id="specialVal">50000</span></label
-                ><br />
-                <!-- prettier-ignore -->
-                <label><p>Concert:</p><input type="range" id="concert" min="0" max="100000" value="50000"> <span id="concertVal">50000</span></label
-                ><br />
-                <label id="pie-checkbox">
-                  <input type="checkbox" id="revealed" /> Reveal actual data
-                </label>
+        <!-- Pie chart full width -->
+        <p class="question-text">
+          Guess the proportion of each show type, then reveal the actual data!
+        </p>
+        <div class="p2-pie-wrapper">
+          <div class="sliders-wrapper">
+            <div id="sliders">
+              <!-- prettier-ignore -->
+              <label><p>Musical:</p><input type="range" id="musical" min="0" max="100000" value="50000"> <span id="musicalVal">50000</span></label
+              ><br />
+              <!-- prettier-ignore -->
+              <label><p>Play:</p><input type="range" id="play" min="0" max="100000" value="50000"> <span id="playVal">50000</span></label
+              ><br />
+              <!-- prettier-ignore -->
+              <label><p>Opera:</p><input type="range" id="opera" min="0" max="100000" value="50000"> <span id="operaVal">50000</span></label
+              ><br />
+              <!-- prettier-ignore -->
+              <label><p>Revue:</p><input type="range" id="revue" min="0" max="100000" value="50000"> <span id="revueVal">50000</span></label
+              ><br />
+              <!-- prettier-ignore -->
+              <label><p>Burlesque:</p><input type="range" id="burlesque" min="0" max="100000" value="50000"> <span id="burlesqueVal">50000</span></label
+              ><br />
+              <!-- prettier-ignore -->
+              <label><p>Special:</p><input type="range" id="special" min="0" max="100000" value="50000"> <span id="specialVal">50000</span></label
+              ><br />
+              <!-- prettier-ignore -->
+              <label><p>Concert:</p><input type="range" id="concert" min="0" max="100000" value="50000"> <span id="concertVal">50000</span></label
+              ><br />
+              <label id="pie-checkbox">
+                <input type="checkbox" id="revealed" /> Reveal actual data
+              </label>
+            </div>
+          </div>
+          <div id="chart"></div>
+        </div>
+
+        <!-- Burlesque row: image left + text right -->
+        <div class="p2-burlesque-row">
+          <div class="p2-burlesque-left">
+            <h2 class="p2-death-heading">Death of Burlesque</h2>
+            <div class="p2-burlesque-img-container">
+              <img src="../imgs/burlesque.png" alt="Burlesque performers on stage" />
+              <div class="p2-burlesque-overlay">
+                <h3>What is Burlesque?</h3>
+                <p>
+                  A theatrical form blending comedy, satire, and suggestive
+                  performance — Burlesque thrived on Broadway in the early 20th
+                  century before regulatory crackdowns drove it offstage.
+                </p>
               </div>
             </div>
-            <div id="chart"></div>
+          </div>
+          <div class="p2-burlesque-right">
+            <p class="information-text">
+              Burlesque's near-disappearance from Broadway is largely attributed
+              to Mayor Fiorello H. La Guardia's legislative crackdown in the
+              late 1940s (Caldwell), which targeted the genre's sexually
+              provocative performances and shut down the venues that hosted them.
+            </p>
+            <p class="information-text">
+              Combined with stricter regulations on public alcohol consumption,
+              these measures effectively pushed Burlesque off Broadway by the
+              1940s.
+              <strong
+                >A brief revival emerged in non-Broadway venues in the early
+                1990s, though it never regained a foothold in the
+                mainstream.</strong
+              >
+            </p>
           </div>
         </div>
-        <div class="p2-info-container">
-          <h2>...So what about Opera? <br />Was Timothee Chalamet right?</h2>
-          <p class="information-text">
-            <strong>Opera's</strong> limited presence on Broadway relative to
-            other show types stems from two structural barriers. First, the
-            genre carries formal audience expectations rooted in classical
-            convention, demanding a level of cultural familiarity that musical
-            theatre does not require.
-          </p>
-          <p class="information-text">
-            Second, many canonical operas are performed in Italian, German, or
-            French, limiting accessibility for the predominantly
-            English-speaking Broadway audience.
-            <strong
-              >Together, these factors have historically kept opera from
-              competing for mainstream Broadway programming, confining it to a
-              small and consistent share of productions across the dataset's
-              two-century span.</strong
-            >
-          </p>
+
+        <!-- Opera section -->
+        <div class="p2-opera-section">
+          <h2 class="p2-opera-heading">
+            &hellip; What about Opera?<br />&hellip; Was Chalamet Right?
+          </h2>
+          <img
+            src="../imgs/timothéechalamet.gif"
+            alt="Timothee Chalamet"
+            class="p2-opera-gif"
+          />
+          <div class="p2-opera-numbered">
+            <div class="p2-opera-point">
+              <span class="opera-num">1.</span>
+              <p>
+                The genre carries formal audience expectations rooted in
+                classical convention, demanding a level of cultural familiarity
+                that musical theatre does not require.
+              </p>
+            </div>
+            <div class="p2-opera-point">
+              <span class="opera-num">2.</span>
+              <p>
+                Many canonical operas are performed in Italian, German, or
+                French, limiting accessibility for the predominantly
+                English-speaking Broadway audience.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <!-- <div class="p2-transition-div"></div> -->
