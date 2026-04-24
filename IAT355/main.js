@@ -37,7 +37,7 @@ requestAnimationFrame(raf);
 
 // ------------ IntersectionObserver for animations ------------
 const documentEntries = document.querySelectorAll(
-  ".question-text, .overlay-box-container, .restart-button",
+  ".question-text, .overlay-box-container, .restart-button, .reveal-up, .reveal-left, .reveal-right, .reveal-fade",
 );
 
 const observer = new IntersectionObserver(

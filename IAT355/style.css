@@ -516,48 +516,32 @@ h2 {
 
 /* pie chart */
 .P2-subsection-wrapper {
-  height: 80%;
   width: 90%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   margin-top: 10vh;
   margin-bottom: 7vh;
+  gap: 4vh;
 }
 
-.p2-pie-container {
-  display: flex;
-  flex-direction: column;
-  flex: 2;
-}
-
-.p2-pie-container .question-text {
+.P2-subsection-wrapper > .question-text {
+  color: var(--primary-gray);
   font-size: 1.25rem;
+  text-align: center;
 }
 
 .p2-pie-wrapper {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  min-height: 420px;
+  align-items: center;
 }
 
-.p2-info-container {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding-left: 3rem;
-}
-
-.p2-info-container .information-text {
-  width: 90%;
-}
-
-.p2-info-container > * {
-  text-align: left !important;
-  width: 100% !important;
-}
 .sliders-wrapper {
   display: flex;
-  flex: 1;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   padding-right: 2rem;
@@ -586,15 +570,175 @@ h2 {
 }
 
 #chart {
-  display: flex;
-  flex-direction: column;
-  flex: 4;
-  padding-left: 2rem;
-  align-items: center;
-  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  min-height: 420px;
 }
+
 .vega-embed.has-actions {
   padding: 0 !important;
+}
+
+/* Reveal button */
+#pie-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  border: 2px solid var(--primary-yellow);
+  color: var(--primary-yellow);
+  background: transparent;
+  font-family: "Hammersmith One", Verdana, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+#pie-checkbox:hover {
+  background: #222116;
+  color: #fdedd4;
+  border-color: #fdedd4;
+}
+
+#pie-checkbox input[type="checkbox"] {
+  accent-color: var(--primary-yellow);
+  cursor: pointer;
+}
+
+/* Burlesque row */
+.p2-burlesque-row {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.p2-burlesque-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.p2-death-heading {
+  font-family: "Hammersmith One", Verdana, sans-serif;
+  font-size: 2rem;
+  color: var(--primary-gray);
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.p2-burlesque-img-container {
+  position: relative;
+  width: 100%;
+}
+
+.p2-burlesque-img-container > img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.p2-burlesque-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  background-color: var(--primary-yellow);
+  color: var(--primary-gray);
+  padding: 1rem 1.25rem;
+}
+
+.p2-burlesque-overlay h3 {
+  font-family: "Hammersmith One", Verdana, sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-gray);
+}
+
+.p2-burlesque-overlay p {
+  font-size: 0.75rem;
+  margin: 0;
+  line-height: 1.4;
+  color: var(--primary-gray);
+}
+
+.p2-burlesque-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.p2-burlesque-right .information-text {
+  width: 100%;
+  text-align: left;
+}
+
+/* Opera section */
+.p2-opera-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.p2-opera-heading {
+  font-family: "Hammersmith One", Verdana, sans-serif;
+  font-size: 2rem;
+  color: var(--primary-gray);
+  text-align: right;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin: 0;
+  align-self: flex-end;
+}
+
+.p2-opera-gif {
+  width: 40%;
+  height: auto;
+  display: block;
+}
+
+.p2-opera-numbered {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  width: 100%;
+}
+
+.p2-opera-point {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.opera-num {
+  font-family: "Hammersmith One", Verdana, sans-serif;
+  font-size: 5rem;
+  font-weight: 100;
+  color: var(--primary-gray);
+  line-height: 1;
+}
+
+.p2-opera-point p {
+  font-size: 0.9rem;
+  color: var(--primary-gray);
+  margin: 0;
+  line-height: 1.5;
 }
 
 @media (max-width: 80rem) {
@@ -613,19 +757,13 @@ h2 {
 }
 
 @media (max-width: 60rem) {
-  .P2-subsection-wrapper {
+  .p2-burlesque-row {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 
   .p2-pie-wrapper {
     flex-direction: column;
     margin-bottom: -30px;
-  }
-
-  .p2-info-container {
-    padding: 0;
   }
 
   .text-column-wrapper .text-column-container:nth-child(3) {
@@ -638,6 +776,15 @@ h2 {
 
   .sliders-wrapper {
     padding: 1rem;
+  }
+
+  .p2-opera-gif {
+    width: 70%;
+  }
+
+  .p2-opera-numbered {
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 
@@ -742,6 +889,42 @@ h2 {
   }
 }
 
+/* ----------- Scroll reveal classes ----------- */
+.reveal-up {
+  transform: translateY(40px);
+  opacity: 0;
+  transition: 700ms ease;
+}
+
+.reveal-left {
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: 700ms ease;
+}
+
+.reveal-right {
+  transform: translateX(50px);
+  opacity: 0;
+  transition: 700ms ease;
+}
+
+.reveal-fade {
+  opacity: 0;
+  transition: 700ms ease;
+}
+
+.reveal-up.show,
+.reveal-left.show,
+.reveal-right.show,
+.reveal-fade.show {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.45s; }
+
 @media (prefers-reduced-motion) {
   .question-text {
     transform: translateY(0px);
@@ -757,5 +940,13 @@ h2 {
     transition: none;
     transform: translateY(0px);
     opacity: 1;
+  }
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-fade {
+    transform: none;
+    opacity: 1;
+    transition: none;
   }
 }
