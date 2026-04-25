@@ -259,7 +259,7 @@ fetchData().then(async (data) => {
 
   // Render the graphs
   render("#P1-1", vlSpecA);
-  render("#P2-1", vlSpec2);
+  // render("#P2-1", vlSpec2);
   render("#P3-1", vlSpec3);
 });
 

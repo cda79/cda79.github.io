@@ -586,15 +586,18 @@ h2 {
   gap: 0.5rem;
   margin-top: 0.75rem;
   padding: 0.5rem 1.25rem;
-  border: 2px solid var(--primary-yellow);
-  color: var(--primary-yellow);
+  border: 2px solid white;
+  color: white;
   background: transparent;
   font-family: "Hammersmith One", Verdana, sans-serif;
   font-size: 0.85rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 #pie-checkbox:hover {
@@ -604,7 +607,7 @@ h2 {
 }
 
 #pie-checkbox input[type="checkbox"] {
-  accent-color: var(--primary-yellow);
+  accent-color: var(--lightgray1);
   cursor: pointer;
 }
 
@@ -652,8 +655,8 @@ h2 {
   top: 0;
   right: 0;
   width: 45%;
-  background-color: var(--primary-yellow);
-  color: var(--primary-gray);
+  background-color: var(--primary-gray);
+  color: var(--whitebroadway);
   padding: 1rem 1.25rem;
 }
 
@@ -663,14 +666,14 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin: 0 0 0.5rem 0;
-  color: var(--primary-gray);
+  /* color: var(--primary-gray); */
 }
 
 .p2-burlesque-overlay p {
   font-size: 0.75rem;
   margin: 0;
   line-height: 1.4;
-  color: var(--primary-gray);
+  /* color: var(--primary-gray); */
 }
 
 .p2-burlesque-right {
@@ -695,6 +698,14 @@ h2 {
   gap: 1.5rem;
 }
 
+.p2-opera-timothee-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: min-content;
+  margin-top: 2rem;
+}
+
 .p2-opera-heading {
   font-family: "Hammersmith One", Verdana, sans-serif;
   font-size: 2rem;
@@ -703,7 +714,7 @@ h2 {
   font-weight: 100;
   letter-spacing: 2px;
   margin: 0;
-  align-self: flex-end;
+  margin-left: auto;
 }
 
 .p2-opera-gif {
@@ -735,7 +746,7 @@ h2 {
 }
 
 .p2-opera-point p {
-  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
   color: var(--primary-gray);
   margin: 0;
   line-height: 1.5;
@@ -921,9 +932,15 @@ h2 {
   opacity: 1;
 }
 
-.delay-1 { transition-delay: 0.15s; }
-.delay-2 { transition-delay: 0.3s; }
-.delay-3 { transition-delay: 0.45s; }
+.delay-1 {
+  transition-delay: 0.15s;
+}
+.delay-2 {
+  transition-delay: 0.3s;
+}
+.delay-3 {
+  transition-delay: 0.45s;
+}
 
 @media (prefers-reduced-motion) {
   .question-text {
